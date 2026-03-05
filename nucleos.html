@@ -87,7 +87,7 @@
             cursor: pointer;
         }
 
-        /* SEÇÃO HERO */
+        /* SEÇÃO HERO - COM IMAGEM DE FUNDO FIXA PARA FALLBACK */
         .hero {
             position: relative;
             width: 100vw;
@@ -98,6 +98,10 @@
             flex-direction: column;
             text-align: center;
             overflow: hidden;
+            /* SEGREDO DO FALLBACK TIPO FGV: A IMAGEM JÁ FICA NO FUNDO */
+            background-image: url('img/background-video.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-video {
@@ -117,7 +121,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.7) 0%, rgba(10, 14, 23, 0.9) 100%);
+            /* Levemente mais escuro para garantir leitura na imagem de fallback */
+            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.75) 0%, rgba(10, 14, 23, 0.95) 100%);
             z-index: 2;
         }
 
@@ -155,7 +160,6 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -361,9 +365,7 @@
             margin-bottom: 12px;
         }
 
-        .footer-column ul li a,
-        .footer-column p,
-        .footer-column a.email-link {
+        .footer-column ul li a, .footer-column p, .footer-column a.email-link {
             color: #adcbd6;
             text-decoration: none;
             font-size: 15px;
@@ -372,8 +374,7 @@
             text-align: left;
         }
 
-        .footer-column a.email-link:hover,
-        .footer-column ul li a:hover {
+        .footer-column a.email-link:hover, .footer-column ul li a:hover {
             color: #D4B45F;
         }
 
@@ -408,43 +409,18 @@
            AJUSTES GLOBAIS E MOBILE - INSERÇÃO CIRÚRGICA
            ========================================= */
         @media (max-width: 900px) {
-            header {
-                background: #101622;
-                padding: 15px 5%;
-            }
-
+            header { background: #101622; padding: 15px 5%; }
+            
             /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
-            .menu-icon {
-                display: block;
-            }
-
+            .menu-icon { display: block; }
             nav {
-                display: none;
-                position: absolute;
-                top: 100px;
-                left: 0;
-                width: 100%;
-                background-color: #101622;
-                flex-direction: column;
-                gap: 0;
-                padding: 20px 0;
-                border-bottom: 2px solid #D4B45F;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+                display: none; position: absolute; top: 100px; left: 0; width: 100%;
+                background-color: #101622; flex-direction: column; gap: 0;
+                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             }
-
-            .menu-toggle:checked~nav {
-                display: flex;
-            }
-
-            nav a {
-                padding: 15px 5%;
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            nav a:last-child {
-                border-bottom: none;
-            }
+            .menu-toggle:checked ~ nav { display: flex; }
+            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            nav a:last-child { border-bottom: none; }
 
             /* Preservando ajustes de layout da página de Núcleos */
             .zigzag-section {
@@ -473,22 +449,16 @@
                 text-align: center;
                 gap: 50px;
             }
-
             .footer-brand {
                 align-items: center;
             }
-
             .footer-column h4::after {
                 left: 50%;
                 transform: translateX(-50%);
             }
-
-            .footer-column ul li a,
-            .footer-column p,
-            .footer-column a.email-link {
+            .footer-column ul li a, .footer-column p, .footer-column a.email-link {
                 text-align: center;
             }
-
             .footer-bottom {
                 flex-direction: column;
                 gap: 15px;
@@ -520,7 +490,7 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video class="hero-video" id="meuVideo" autoplay loop muted playsinline poster="img/background-video.jpg">
             <source src="video/video-fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -642,6 +612,19 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var video = document.getElementById("meuVideo");
+            if (video) {
+                var playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function (error) {
+                        video.remove();
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
