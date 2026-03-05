@@ -75,6 +75,10 @@
             color: #D4B45F;
         }
 
+        /* HACK MENU MOBILE - Escondido no PC */
+        .menu-toggle { display: none; }
+        .menu-icon { display: none; color: #F2F4F8; font-size: 28px; cursor: pointer; }
+
         /* SEÇÃO HERO */
         .hero {
             position: relative;
@@ -484,60 +488,6 @@
             color: #D4B45F;
         }
 
-        /* AJUSTES GLOBAIS E MOBILE - INDEX */
-        @media (max-width: 900px) {
-            header {
-                background: #101622;
-                padding: 15px 5%;
-            }
-
-            nav {
-                display: none;
-            }
-
-            /* Preservando ajustes de Parceiros do Index */
-            .partners-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-
-            .partner-box {
-                height: 60px;
-            }
-
-            .butia-logo img {
-                transform: scale(1.3);
-            }
-
-            /* Ajustes do Footer no Mobile */
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 50px;
-            }
-
-            .footer-brand {
-                align-items: center;
-            }
-
-            .footer-column h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .footer-column ul li a,
-            .footer-column p,
-            .footer-column a.email-link {
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
-
         /* =========================================
            CTA PREMIUM (WATERMARK & CLEAN SPLIT)
            ========================================= */
@@ -642,11 +592,34 @@
             transform: translateX(5px);
         }
 
-        /* AJUSTE MOBILE */
+        /* AJUSTE MOBILE - INSERÇÃO CIRÚRGICA */
         @media (max-width: 900px) {
-            .cta-elite { padding: 90px 5%; }
-            .cta-watermark { font-size: 50vw; top: 10%; transform: translateY(0); right: -10%; }
-            .cta-container { flex-direction: column; align-items: flex-start; gap: 35px; }
+            header { background: #101622; padding: 15px 5%; }
+            .menu-icon { display: block; }
+            nav {
+                display: none; position: absolute; top: 100px; left: 0; width: 100%;
+                background-color: #101622; flex-direction: column; gap: 0;
+                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            }
+            .menu-toggle:checked ~ nav { display: flex; }
+            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            nav a:last-child { border-bottom: none; }
+            .hero-center-logo { height: 120px; }
+            .section-light, .section-dark, .section-darker { padding: 80px 5%; }
+            .cta-elite { padding: 80px 5%; }
+            .cta-title { font-size: 32px; text-align: center; }
+            .cta-text { text-align: center; }
+            .btn-gold-cta { width: 100%; text-align: center; }
+            .cta-container { flex-direction: column; gap: 30px; }
+            .cta-watermark { font-size: 60vw; top: 15%; right: -20%; opacity: 0.05; }
+            .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .partner-box { height: 60px; }
+            .butia-logo img { transform: scale(1.3); }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .footer-brand { align-items: center; }
+            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -657,6 +630,10 @@
         <a href="index.html" class="header-logo">
             <img src="img/logo-ifs.png" alt="IFS Logo">
         </a>
+
+        <input type="checkbox" id="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-icon">&#9776;</label>
+
         <nav>
             <a href="index.html" style="color: #D4B45F;">Início</a>
             <a href="nucleos.html">Núcleos</a>
