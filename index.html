@@ -98,7 +98,6 @@
             flex-direction: column;
             text-align: center;
             overflow: hidden;
-            /* SEGREDO DO FALLBACK TIPO FGV: A IMAGEM JÁ FICA NO FUNDO */
             background-image: url('img/background-video.jpg');
             background-size: cover;
             background-position: center;
@@ -121,7 +120,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* Levemente mais escuro para garantir leitura na imagem de fallback */
             background: linear-gradient(to bottom, rgba(10, 14, 23, 0.75) 0%, rgba(10, 14, 23, 0.95) 100%);
             z-index: 2;
         }
@@ -165,34 +163,29 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PADRÕES DE SEÇÕES */
+        /* =========================================
+           PADRÕES DE SEÇÕES - CORES CORRIGIDAS
+           ========================================= */
         .section-light {
             background-color: #F2F4F8;
-            color: #1a1e22;
+            color: #001d30;
             padding: 120px 8%;
             text-align: center;
         }
 
         .section-dark {
-            background-color: #1a1e22;
+            background-color: #101622; /* Fundo limpo, sem gradiente, cortando a mistura */
             color: #F2F4F8;
             padding: 100px 8%;
             text-align: center;
         }
 
         .section-darker {
-            background-color: #001d30;
+            background-color: #001d30; /* O AZUL INSTITUCIONAL VOLTOU AQUI PARA DESTACAR AS LOGOS */
             color: #F2F4F8;
             padding: 100px 8%;
             text-align: center;
@@ -227,7 +220,7 @@
 
         .section-subtitle {
             margin: 0 auto 60px;
-            color: #444;
+            color: #334155;
             max-width: 800px;
             font-size: 16px;
             line-height: 1.8;
@@ -254,6 +247,7 @@
         .info-card:hover {
             transform: translateY(-8px);
             border-top-color: #001d30;
+            box-shadow: 0 20px 40px rgba(0, 29, 48, 0.12);
         }
 
         .info-card h3 {
@@ -265,16 +259,27 @@
 
         .info-card p {
             font-size: 15px;
-            color: #444;
+            color: #334155;
             line-height: 1.7;
         }
 
+        /* ESTILO GLASSMORPHISM (VIDRO) PREMIUM PARA OS DEPOIMENTOS */
         .testimonial-card {
-            background: #101622;
+            background: rgba(255, 255, 255, 0.03);
             border-left: 4px solid #D4B45F;
             padding: 40px;
             text-align: left;
-            border-radius: 2px;
+            border-radius: 4px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .testimonial-card p {
@@ -345,28 +350,109 @@
             transform: scale(1.08);
         }
 
-        .btn-gold {
-            display: inline-block;
-            padding: 18px 45px;
+        /* =========================================
+           CTA PREMIUM (WATERMARK & CLEAN SPLIT)
+           ========================================= */
+        .cta-elite {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            padding: 120px 8%;
+            overflow: hidden;
+        }
+
+        .cta-watermark {
+            position: absolute;
+            top: 50%;
+            right: -2%;
+            transform: translateY(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 35vw;
+            font-weight: 700;
+            color: rgba(16, 22, 34, 0.02);
+            line-height: 1;
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .cta-title-wrapper {
+            flex: 1.2;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 4.5vw, 55px);
+            color: #001d30;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-title span {
+            color: #D4B45F;
+        }
+
+        .cta-content-wrapper {
+            flex: 1;
+        }
+
+        .cta-text {
+            font-size: 17px;
+            color: #334155;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .btn-gold-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 45px;
             background-color: #D4B45F;
             color: #101622;
             text-decoration: none;
             font-weight: 700;
             font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
+            letter-spacing: 2.5px;
             border-radius: 2px;
             border: 2px solid #D4B45F;
+            transition: 0.3s ease;
         }
 
-        .btn-gold:hover {
+        .btn-gold-cta:hover {
             background-color: transparent;
-            color: #D4B45F;
+            color: #B7891C;
+            border-color: #B7891C;
+            transform: translateX(5px);
+        }
+
+        .btn-gold-cta svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-gold-cta:hover svg {
+            transform: translateX(5px);
         }
 
         /* =========================================
-           RODAPÉ PREMIUM DEFINITIVO - INDEX
+           RODAPÉ PREMIUM DEFINITIVO
            ========================================= */
         footer {
             background-color: #0a0e17;
@@ -384,7 +470,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Coluna 1: Logo e Redes */
         .footer-brand {
             display: flex;
             flex-direction: column;
@@ -428,7 +513,6 @@
             height: 20px;
         }
 
-        /* Coluna 2 e 3: Títulos, Links e Textos */
         .footer-column h4 {
             font-family: 'Montserrat', sans-serif;
             font-size: 15px;
@@ -478,7 +562,6 @@
             padding-left: 6px;
         }
 
-        /* Barra Inferior */
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -502,121 +585,24 @@
         }
 
         /* =========================================
-           CTA PREMIUM (WATERMARK & CLEAN SPLIT)
+           AJUSTES GLOBAIS E MOBILE
            ========================================= */
-        .cta-elite {
-            position: relative;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
-            padding: 120px 8%;
-            overflow: hidden; /* Garante que a marca d'água não passe do bloco */
-        }
-
-        /* Marca d'água gigante de fundo (Preenche o vazio com puro luxo) */
-        .cta-watermark {
-            position: absolute;
-            top: 50%;
-            right: -2%;
-            transform: translateY(-50%);
-            font-family: 'Playfair Display', serif;
-            font-size: 35vw; /* Tamanho massivo adaptável à tela */
-            font-weight: 700;
-            color: rgba(16, 22, 34, 0.02); /* 2% de opacidade: quase invisível, mas presente */
-            line-height: 1;
-            pointer-events: none;
-            z-index: 1;
-            user-select: none;
-        }
-
-        .cta-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 80px;
-        }
-
-        .cta-title-wrapper {
-            flex: 1.2;
-        }
-
-        .cta-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(38px, 4.5vw, 55px);
-            color: #001d30;
-            line-height: 1.15;
-            font-weight: 700;
-            margin: 0;
-            letter-spacing: -0.5px;
-        }
-
-        /* O ponto final em dourado - O único detalhe de cor necessário */
-        .cta-title span {
-            color: #D4B45F;
-        }
-
-        .cta-content-wrapper {
-            flex: 1;
-        }
-
-        .cta-text {
-            font-size: 17px;
-            color: #444;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        /* Botão Minimalista e Direto */
-        .btn-gold-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 20px 45px;
-            background-color: #D4B45F;
-            color: #101622;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            border-radius: 2px;
-            border: 2px solid #D4B45F;
-            transition: 0.3s ease;
-        }
-
-        .btn-gold-cta:hover {
-            background-color: transparent;
-            color: #B7891C;
-            border-color: #B7891C;
-            transform: translateX(5px);
-        }
-
-        .btn-gold-cta svg {
-            width: 18px;
-            height: 18px;
-            transition: transform 0.3s ease;
-        }
-
-        .btn-gold-cta:hover svg {
-            transform: translateX(5px);
-        }
-
-        /* AJUSTE MOBILE - INSERÇÃO CIRÚRGICA */
         @media (max-width: 900px) {
             header { background: #101622; padding: 15px 5%; }
+            
             .menu-icon { display: block; }
+            
             nav {
                 display: none; position: absolute; top: 100px; left: 0; width: 100%;
                 background-color: #101622; flex-direction: column; gap: 0;
                 padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             }
+            
             .menu-toggle:checked ~ nav { display: flex; }
+            
             nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
             nav a:last-child { border-bottom: none; }
+            
             .hero-center-logo { height: 120px; }
             .section-light, .section-dark, .section-darker { padding: 80px 5%; }
             .cta-elite { padding: 80px 5%; }
@@ -625,11 +611,15 @@
             .btn-gold-cta { width: 100%; text-align: center; }
             .cta-container { flex-direction: column; gap: 30px; }
             .cta-watermark { font-size: 60vw; top: 15%; right: -20%; opacity: 0.05; }
+            
             .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
             .partner-box { height: 60px; }
             .butia-logo img { transform: scale(1.3); }
+            
+            /* Ajustes do Footer no Mobile */
             .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .footer-brand { align-items: center; }
+            .footer-brand { align-items: center; width: 100%; }
+            .footer-socials { justify-content: center; width: 100%; }
             .footer-column h4::after { left: 50%; transform: translateX(-50%); }
             .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
             .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
@@ -830,8 +820,6 @@
                 var playPromise = video.play();
                 if (playPromise !== undefined) {
                     playPromise.catch(function (error) {
-                        // Se o navegador bloquear o autoplay (como no modo economia), remove o vídeo inteiro.
-                        // Assim, o fundo fica apenas com a imagem de backup (background-video.jpg) definida no CSS.
                         video.remove();
                     });
                 }
