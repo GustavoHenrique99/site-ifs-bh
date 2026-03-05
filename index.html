@@ -76,8 +76,16 @@
         }
 
         /* HACK MENU MOBILE - Escondido no PC */
-        .menu-toggle { display: none; }
-        .menu-icon { display: none; color: #F2F4F8; font-size: 28px; cursor: pointer; }
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            color: #F2F4F8;
+            font-size: 28px;
+            cursor: pointer;
+        }
 
         /* SEÇÃO HERO */
         .hero {
@@ -495,7 +503,8 @@
             position: relative;
             background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
             padding: 120px 8%;
-            overflow: hidden; /* Garante que a marca d'água não passe do bloco */
+            overflow: hidden;
+            /* Garante que a marca d'água não passe do bloco */
         }
 
         /* Marca d'água gigante de fundo (Preenche o vazio com puro luxo) */
@@ -505,9 +514,11 @@
             right: -2%;
             transform: translateY(-50%);
             font-family: 'Playfair Display', serif;
-            font-size: 35vw; /* Tamanho massivo adaptável à tela */
+            font-size: 35vw;
+            /* Tamanho massivo adaptável à tela */
             font-weight: 700;
-            color: rgba(16, 22, 34, 0.02); /* 2% de opacidade: quase invisível, mas presente */
+            color: rgba(16, 22, 34, 0.02);
+            /* 2% de opacidade: quase invisível, mas presente */
             line-height: 1;
             pointer-events: none;
             z-index: 1;
@@ -594,32 +605,122 @@
 
         /* AJUSTE MOBILE - INSERÇÃO CIRÚRGICA */
         @media (max-width: 900px) {
-            header { background: #101622; padding: 15px 5%; }
-            .menu-icon { display: block; }
-            nav {
-                display: none; position: absolute; top: 100px; left: 0; width: 100%;
-                background-color: #101622; flex-direction: column; gap: 0;
-                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            header {
+                background: #101622;
+                padding: 15px 5%;
             }
-            .menu-toggle:checked ~ nav { display: flex; }
-            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            nav a:last-child { border-bottom: none; }
-            .hero-center-logo { height: 120px; }
-            .section-light, .section-dark, .section-darker { padding: 80px 5%; }
-            .cta-elite { padding: 80px 5%; }
-            .cta-title { font-size: 32px; text-align: center; }
-            .cta-text { text-align: center; }
-            .btn-gold-cta { width: 100%; text-align: center; }
-            .cta-container { flex-direction: column; gap: 30px; }
-            .cta-watermark { font-size: 60vw; top: 15%; right: -20%; opacity: 0.05; }
-            .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-            .partner-box { height: 60px; }
-            .butia-logo img { transform: scale(1.3); }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .footer-brand { align-items: center; }
-            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #101622;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                border-bottom: 2px solid #D4B45F;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu-toggle:checked~nav {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 5%;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .hero-center-logo {
+                height: 120px;
+            }
+
+            .section-light,
+            .section-dark,
+            .section-darker {
+                padding: 80px 5%;
+            }
+
+            .cta-elite {
+                padding: 80px 5%;
+            }
+
+            .cta-title {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .cta-text {
+                text-align: center;
+            }
+
+            .btn-gold-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .cta-watermark {
+                font-size: 60vw;
+                top: 15%;
+                right: -20%;
+                opacity: 0.05;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .partner-box {
+                height: 60px;
+            }
+
+            .butia-logo img {
+                transform: scale(1.3);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .footer-brand {
+                align-items: center;
+            }
+
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a,
+            .footer-column p,
+            .footer-column a.email-link {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -726,22 +827,25 @@
     </section>
 
     <section class="cta-elite">
-        
+
         <div class="cta-watermark">IFS</div>
-        
+
         <div class="cta-container">
-            
+
             <div class="cta-title-wrapper">
                 <h2 class="cta-title">Onde o Mercado<br>Encontra o Talento<span>.</span></h2>
             </div>
-            
+
             <div class="cta-content-wrapper">
                 <p class="cta-text">
-                    A nossa missão é identificar estudantes excepcionais e transformá-los em profissionais de alta performance. Domine a modelagem financeira, refine a sua visão estratégica e conecte-se com as principais instituições financeiras do país.
+                    A nossa missão é identificar estudantes excepcionais e transformá-los em profissionais de alta
+                    performance. Domine a modelagem financeira, refine a sua visão estratégica e conecte-se com as
+                    principais instituições financeiras do país.
                 </p>
                 <a href="processo.html" class="btn-gold-cta">
                     Ingressar na Liga
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </a>
