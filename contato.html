@@ -77,7 +77,19 @@
             color: #D4B45F;
         }
 
-        /* SEÇÃO HERO - PADRÃO INSTITUCIONAL */
+        /* HACK MENU MOBILE - Escondido no PC */
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            color: #F2F4F8;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* SEÇÃO HERO - PADRÃO INSTITUCIONAL COM FALLBACK */
         .hero {
             position: relative;
             width: 100vw;
@@ -88,6 +100,9 @@
             flex-direction: column;
             text-align: center;
             overflow: hidden;
+            background-image: url('img/background-video.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-video {
@@ -107,7 +122,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.7) 0%, rgba(10, 14, 23, 0.9) 100%);
+            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.75) 0%, rgba(10, 14, 23, 0.95) 100%);
             z-index: 2;
         }
 
@@ -140,6 +155,11 @@
             text-transform: uppercase;
             margin-top: 15px;
             margin-bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* CONTEÚDO DE CONTATO - INTACTO */
@@ -365,16 +385,22 @@
             color: #D4B45F;
         }
 
-        /* ANIMAÇÕES */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* AJUSTES GLOBAIS E MOBILE PARA CONTATO */
+        /* =========================================
+           AJUSTES GLOBAIS E MOBILE PARA CONTATO
+           ========================================= */
         @media (max-width: 900px) {
             header { background: #101622; padding: 15px 5%; }
-            nav { display: none; }
+            
+            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
+            .menu-icon { display: block; }
+            nav {
+                display: none; position: absolute; top: 100px; left: 0; width: 100%;
+                background-color: #101622; flex-direction: column; gap: 0;
+                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            }
+            .menu-toggle:checked ~ nav { display: flex; }
+            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            nav a:last-child { border-bottom: none; }
 
             /* Preservando layout de contato no mobile */
             .contact-container {
@@ -397,6 +423,11 @@
             }
             .footer-brand {
                 align-items: center;
+                width: 100%;
+            }
+            .footer-socials {
+                justify-content: center;
+                width: 100%;
             }
             .footer-column h4::after {
                 left: 50%;
@@ -420,6 +451,10 @@
         <a href="index.html" class="header-logo">
             <img src="img/logo-ifs.png" alt="IFS Logo">
         </a>
+        
+        <input type="checkbox" id="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-icon">&#9776;</label>
+
         <nav>
             <a href="index.html">Início</a>
             <a href="nucleos.html">Núcleos</a>
@@ -432,7 +467,7 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video class="hero-video" id="meuVideo" autoplay loop muted playsinline poster="img/background-video.jpg">
             <source src="video/video-fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -471,7 +506,7 @@
 
         <div class="map-box">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.9332156826135!2d-43.93288892389148!3d-19.92838378145781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69996e8ff2bcb%3A0xd2d61e69f3898f78!2sIbmec%20-%20Belo%20Horizonte!5e0!3m2!1spt-BR!2sbr!4v1709339400000!5m2!1spt-BR!2sbr"
+                src="https://maps.google.com/maps?q=Ibmec%20Belo%20Horizonte&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
@@ -532,6 +567,19 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var video = document.getElementById("meuVideo");
+            if (video) {
+                var playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function (error) {
+                        video.remove();
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
