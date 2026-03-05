@@ -73,7 +73,19 @@
             color: #D4B45F;
         }
 
-        /* SEÇÃO HERO (VÍDEO) */
+        /* HACK MENU MOBILE - Escondido no PC */
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            color: #F2F4F8;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* SEÇÃO HERO (VÍDEO) COM FALLBACK ESTILO FGV */
         .hero {
             position: relative;
             width: 100vw;
@@ -84,6 +96,9 @@
             flex-direction: column;
             text-align: center;
             overflow: hidden;
+            background-image: url('img/background-video.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .hero-video {
@@ -103,7 +118,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.7) 0%, rgba(10, 14, 23, 0.9) 100%);
+            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.75) 0%, rgba(10, 14, 23, 0.95) 100%);
             z-index: 2;
         }
 
@@ -349,16 +364,33 @@
             color: #D4B45F;
         }
 
-        /* AJUSTES MOBILE */
+        /* =========================================
+           AJUSTES GLOBAIS E MOBILE - INSERÇÃO CIRÚRGICA
+           ========================================= */
         @media (max-width: 900px) {
             header { background: #101622; padding: 15px 5%; }
-            nav { display: none; }
+            
+            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
+            .menu-icon { display: block; }
+            nav {
+                display: none; position: absolute; top: 100px; left: 0; width: 100%;
+                background-color: #101622; flex-direction: column; gap: 0;
+                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            }
+            .menu-toggle:checked ~ nav { display: flex; }
+            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            nav a:last-child { border-bottom: none; }
+
             .intro-classic-section { padding: 80px 5%; }
             .alumni-list-section { padding: 80px 5%; }
+            
+            /* Ajuste da Grid de Alumni para Mobile */
             .alumni-list-grid { grid-template-columns: 1fr; text-align: center; }
             .section-title-gold { text-align: center; }
             .section-title-gold::after { left: 50%; transform: translateX(-50%); }
             .alumni-item:hover { transform: none; }
+            
+            /* Ajustes do Footer no Mobile */
             .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
             .footer-brand { align-items: center; }
             .footer-column h4::after { left: 50%; transform: translateX(-50%); }
@@ -374,6 +406,10 @@
         <a href="index.html" class="header-logo">
             <img src="img/logo-ifs.png" alt="IFS Logo">
         </a>
+
+        <input type="checkbox" id="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-icon">&#9776;</label>
+
         <nav>
             <a href="index.html">Início</a>
             <a href="nucleos.html">Núcleos</a>
@@ -386,7 +422,7 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video class="hero-video" id="meuVideo" autoplay loop muted playsinline poster="img/background-video.jpg">
             <source src="video/video-fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -499,7 +535,6 @@
                     </a>
                 </div>
             </div>
-
             <div class="footer-column">
                 <h4>Navegação</h4>
                 <ul>
@@ -511,7 +546,6 @@
                     <li><a href="processo.html">Processo Seletivo</a></li>
                 </ul>
             </div>
-
             <div class="footer-column">
                 <h4>Endereço e Contato</h4>
                 <p style="margin-bottom: 20px;">
@@ -525,18 +559,30 @@
                     <a href="mailto:diretoriaifsbh@gmail.com" class="email-link">diretoriaifsbh@gmail.com</a>
                 </p>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <div class="copyright">
                 &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
             </div>
             <div class="developer">
-                Desenvolvido por <a href="#" class="dev-signature">Gustavo Henrique</a>
+                Developed por <a href="#" class="dev-signature">Gustavo Henrique</a>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var video = document.getElementById("meuVideo");
+            if (video) {
+                var playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(function (error) {
+                        video.remove();
+                    });
+                }
+            }
+        });
+    </script>
 
 </body>
 
