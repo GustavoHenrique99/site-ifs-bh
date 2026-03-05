@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Equipe | IFS-BH</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* RESET E PALETA OFICIAL IFS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #101622;
+            /* ROXO PROFUNDO IFS */
+            color: #F2F4F8;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* NAVEGAÇÃO SUPERIOR PADRONIZADA (IGUAL A HOME) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(16, 22, 34, 0.98) 0%, rgba(16, 22, 34, 0) 100%);
+            transition: 0.3s;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 75px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: 0.3s;
+            margin-left: -5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 45px;
+            align-items: center;
+            margin-right: 2%;
+        }
+
+        nav a {
+            color: #F2F4F8;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #D4B45F;
+        }
+
+        /* HERO SECTION - TELA CHEIA PADRONIZADA */
+        .hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.7) 0%, rgba(10, 14, 23, 0.9) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .hero-content p {
+            font-size: clamp(12px, 1.8vw, 16px);
+            color: #D4B45F;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            /* Espaço entre o Título e o Subtítulo */
+            margin-bottom: 0;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5.5vw, 75px);
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #F2F4F8;
+            line-height: 1.2;
+        }
+
+        /* SEÇÃO DE EQUIPE - DESIGN DE MOSAICO/CARDS */
+        .team-section {
+            padding: 120px 8%;
+            text-align: center;
+        }
+
+        /* Padronizando tudo para a cor clara para evitar o "derretimento" no footer */
+        .team-section.light {
+            background-color: #F2F4F8;
+            color: #101622;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+            color: #001d30;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #B7891C;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CARD DO MEMBRO - TAMANHO REDUZIDO */
+        .member-card {
+            width: 260px;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.4s;
+            text-align: left;
+            background: #ffffff;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+            border-bottom: 4px solid #D4B45F;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        /* PLACEHOLDER DA FOTO - ALTURA REDUZIDA */
+        .photo-placeholder {
+            width: 100%;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1e22, #001d30);
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .member-info {
+            padding: 25px 20px;
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: #001d30;
+        }
+
+        .member-role {
+            font-size: 11px;
+            font-weight: 700;
+            color: #B7891C;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .member-period {
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .linkedin-btn {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            padding-bottom: 3px;
+            border-bottom: 2px solid #D4B45F;
+            transition: 0.3s;
+            color: #101622;
+        }
+
+        .linkedin-btn:hover {
+            color: #B7891C;
+            border-color: transparent;
+        }
+
+        /* =========================================
+           RODAPÉ PREMIUM DEFINITIVO - EQUIPE
+           ========================================= */
+        footer {
+            background-color: #0a0e17;
+            padding: 70px 8% 30px;
+            border-top: 1px solid rgba(212, 180, 95, 0.15);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .footer-logo-img {
+            height: 110px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .footer-socials a {
+            color: #F2F4F8;
+            transition: 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .footer-socials a:hover {
+            background-color: #D4B45F;
+            color: #101622;
+            transform: translateY(-3px);
+        }
+
+        .footer-socials svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-column h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #F2F4F8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #D4B45F;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a, .footer-column p, .footer-column a.email-link {
+            color: #adcbd6;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .footer-column a.email-link:hover, .footer-column ul li a:hover {
+            color: #D4B45F;
+        }
+
+        .footer-column ul li a:hover {
+            padding-left: 6px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 25px;
+            font-size: 13px;
+            color: #566b8e;
+        }
+
+        .dev-signature {
+            color: #566b8e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .dev-signature:hover {
+            color: #D4B45F;
+        }
+
+        /* AJUSTES GLOBAIS E MOBILE PARA EQUIPE */
+        @media (max-width: 900px) {
+            header { background: #101622; padding: 15px 5%; }
+            nav { display: none; }
+
+            /* Preservando ajustes específicos da página de equipe */
+            .team-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .member-card {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            /* Ajustes do Footer no Mobile */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+            .footer-brand {
+                align-items: center;
+            }
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .footer-column ul li a, .footer-column p, .footer-column a.email-link {
+                text-align: center;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="header-logo">
+            <img src="img/logo-ifs.png" alt="IFS Logo">
+        </a>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="nucleos.html">Núcleos</a>
+            <a href="equipe.html" style="color: #D4B45F;">Equipe</a>
+            <a href="competicoes.html">Competições</a>
+            <a href="alumni.html">Alumni</a>
+            <a href="processo.html">Processo Seletivo</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="video/video-fundo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Nossa Equipe</h1>
+            <p>Gestão e Estratégia</p>
+        </div>
+    </section>
+
+    <section class="team-section light">
+        <h2 class="section-title">Presidência</h2>
+        <div class="team-grid">
+
+            <div class="member-card">
+                <div class="photo-placeholder">Aguardando Foto</div>
+                <div class="member-info">
+                    <div class="member-name">André Rodrigues</div>
+                    <div class="member-role">Presidente</div>
+                    <div class="member-period">6º Período</div>
+                    <a href="https://www.linkedin.com/in/andrerodriguesevangelista/" target="_blank"
+                        class="linkedin-btn">Ver Perfil</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-placeholder">Aguardando Foto</div>
+                <div class="member-info">
+                    <div class="member-name">Igor Blom</div>
+                    <div class="member-role">Vice-Presidente</div>
+                    <div class="member-period">3º Período</div>
+                    <a href="https://www.linkedin.com/in/igor-blom-a23922354/" target="_blank" class="linkedin-btn">Ver
+                        Perfil</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="team-section light" style="padding-top: 0;">
+        <h2 class="section-title">Diretores</h2>
+        <div class="team-grid">
+
+            <div class="member-card">
+                <div class="photo-placeholder">Aguardando Foto</div>
+                <div class="member-info">
+                    <div class="member-name">Tércio Minardi</div>
+                    <div class="member-role">Diretor</div>
+                    <div class="member-period">3º Período</div>
+                    <a href="https://www.linkedin.com/in/t%C3%A9rciominardipedrosa/" target="_blank"
+                        class="linkedin-btn">Ver Perfil</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-placeholder">Aguardando Foto</div>
+                <div class="member-info">
+                    <div class="member-name">André Laranjeira</div>
+                    <div class="member-role">Diretor</div>
+                    <div class="member-period">4º Período</div>
+                    <a href="https://www.linkedin.com/in/andre-laranjeira-763466310/" target="_blank"
+                        class="linkedin-btn">Ver Perfil</a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="photo-placeholder">Aguardando Foto</div>
+                <div class="member-info">
+                    <div class="member-name">Gabriel Moura</div>
+                    <div class="member-role">Diretor</div>
+                    <div class="member-period">3º Período</div>
+                    <a href="https://www.linkedin.com/in/gabriel-henrique-a34477360/" target="_blank"
+                        class="linkedin-btn">Ver Perfil</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            
+            <div class="footer-brand">
+                <img src="img/logo-ifs.png" alt="IFS Logo" class="footer-logo-img">
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://instagram.com/ifs_bh" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="nucleos.html">Núcleos</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="competicoes.html">Competições</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="processo.html">Processo Seletivo</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Endereço e Contato</h4>
+                <p style="margin-bottom: 20px;">
+                    <strong style="color: #F2F4F8;">Ibmec Belo Horizonte</strong><br>
+                    Rua Rio Grande do Norte, 1560<br>
+                    Funcionários, Belo Horizonte - MG<br>
+                    CEP: 30130-138
+                </p>
+                <p>
+                    <strong style="color: #F2F4F8;">E-mail</strong><br>
+                    <a href="mailto:diretoriaifsbh@gmail.com" class="email-link">diretoriaifsbh@gmail.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
+            </div>
+            <div class="developer">
+                Developed by <a href="#" class="dev-signature">Gustavo Henrique</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

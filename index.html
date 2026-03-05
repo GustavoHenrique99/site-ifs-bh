@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFS | IBMEC Finance Society</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* RESET E PALETA OFICIAL IFS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #101622;
+            color: #F2F4F8;
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* HEADER REFINADO */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(16, 22, 34, 0.98) 0%, rgba(16, 22, 34, 0) 100%);
+            transition: 0.3s;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            height: 75px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: 0.3s;
+            margin-left: -5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 45px;
+            align-items: center;
+            margin-right: 2%;
+        }
+
+        nav a {
+            color: #F2F4F8;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #D4B45F;
+        }
+
+        /* SEÇÃO HERO */
+        .hero {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(10, 14, 23, 0.7) 0%, rgba(10, 14, 23, 0.9) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1000px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        .hero-center-logo {
+            height: 200px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            margin-bottom: 25px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4.5vw, 65px);
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #F2F4F8;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .hero-content p {
+            font-size: clamp(12px, 1.8vw, 16px);
+            color: #D4B45F;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* PADRÕES DE SEÇÕES */
+        .section-light {
+            background-color: #F2F4F8;
+            color: #1a1e22;
+            padding: 120px 8%;
+            text-align: center;
+        }
+
+        .section-dark {
+            background-color: #1a1e22;
+            color: #F2F4F8;
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .section-darker {
+            background-color: #001d30;
+            color: #F2F4F8;
+            padding: 100px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .title-dark {
+            color: #001d30;
+        }
+
+        .title-gold {
+            color: #D4B45F;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #B7891C;
+        }
+
+        .section-subtitle {
+            margin: 0 auto 60px;
+            color: #444;
+            max-width: 800px;
+            font-size: 16px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            padding: 50px 35px;
+            border-radius: 4px;
+            border-top: 4px solid #D4B45F;
+            box-shadow: 0 15px 35px rgba(16, 22, 34, 0.08);
+            transition: 0.4s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            border-top-color: #001d30;
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #001d30;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .testimonial-card {
+            background: #101622;
+            border-left: 4px solid #D4B45F;
+            padding: 40px;
+            text-align: left;
+            border-radius: 2px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #adcbd6;
+            margin-bottom: 25px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .testimonial-user {
+            font-weight: 700;
+            color: #F2F4F8;
+            font-size: 14px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #B7891C;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* PARCEIROS */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .partner-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            padding: 10px;
+            transition: 0.4s ease;
+        }
+
+        .partner-box img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.85;
+            transition: 0.4s ease;
+        }
+
+        .butia-logo img {
+            transform: scale(1.6);
+        }
+
+        .partner-box:hover img {
+            filter: none;
+            opacity: 1;
+        }
+
+        .butia-logo:hover img {
+            transform: scale(1.7);
+        }
+
+        .partner-box:not(.butia-logo):hover img {
+            transform: scale(1.08);
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: #D4B45F;
+            color: #101622;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border-radius: 2px;
+            border: 2px solid #D4B45F;
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: #D4B45F;
+        }
+
+        /* =========================================
+           RODAPÉ PREMIUM DEFINITIVO - INDEX
+           ========================================= */
+        footer {
+            background-color: #0a0e17;
+            padding: 70px 8% 30px;
+            border-top: 1px solid rgba(212, 180, 95, 0.15);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Coluna 1: Logo e Redes */
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .footer-logo-img {
+            height: 110px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+
+        .footer-socials a {
+            color: #F2F4F8;
+            transition: 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .footer-socials a:hover {
+            background-color: #D4B45F;
+            color: #101622;
+            transform: translateY(-3px);
+        }
+
+        .footer-socials svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Coluna 2 e 3: Títulos, Links e Textos */
+        .footer-column h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #F2F4F8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #D4B45F;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column p,
+        .footer-column a.email-link {
+            color: #adcbd6;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .footer-column a.email-link:hover,
+        .footer-column ul li a:hover {
+            color: #D4B45F;
+        }
+
+        .footer-column ul li a:hover {
+            padding-left: 6px;
+        }
+
+        /* Barra Inferior */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 25px;
+            font-size: 13px;
+            color: #566b8e;
+        }
+
+        .dev-signature {
+            color: #566b8e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .dev-signature:hover {
+            color: #D4B45F;
+        }
+
+        /* AJUSTES GLOBAIS E MOBILE - INDEX */
+        @media (max-width: 900px) {
+            header {
+                background: #101622;
+                padding: 15px 5%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            /* Preservando ajustes de Parceiros do Index */
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .partner-box {
+                height: 60px;
+            }
+
+            .butia-logo img {
+                transform: scale(1.3);
+            }
+
+            /* Ajustes do Footer no Mobile */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .footer-brand {
+                align-items: center;
+            }
+
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a,
+            .footer-column p,
+            .footer-column a.email-link {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        /* =========================================
+           CTA PREMIUM (WATERMARK & CLEAN SPLIT)
+           ========================================= */
+        .cta-elite {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            padding: 120px 8%;
+            overflow: hidden; /* Garante que a marca d'água não passe do bloco */
+        }
+
+        /* Marca d'água gigante de fundo (Preenche o vazio com puro luxo) */
+        .cta-watermark {
+            position: absolute;
+            top: 50%;
+            right: -2%;
+            transform: translateY(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 35vw; /* Tamanho massivo adaptável à tela */
+            font-weight: 700;
+            color: rgba(16, 22, 34, 0.02); /* 2% de opacidade: quase invisível, mas presente */
+            line-height: 1;
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .cta-title-wrapper {
+            flex: 1.2;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 4.5vw, 55px);
+            color: #001d30;
+            line-height: 1.15;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        /* O ponto final em dourado - O único detalhe de cor necessário */
+        .cta-title span {
+            color: #D4B45F;
+        }
+
+        .cta-content-wrapper {
+            flex: 1;
+        }
+
+        .cta-text {
+            font-size: 17px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        /* Botão Minimalista e Direto */
+        .btn-gold-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 45px;
+            background-color: #D4B45F;
+            color: #101622;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            border-radius: 2px;
+            border: 2px solid #D4B45F;
+            transition: 0.3s ease;
+        }
+
+        .btn-gold-cta:hover {
+            background-color: transparent;
+            color: #B7891C;
+            border-color: #B7891C;
+            transform: translateX(5px);
+        }
+
+        .btn-gold-cta svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-gold-cta:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* AJUSTE MOBILE */
+        @media (max-width: 900px) {
+            .cta-elite { padding: 90px 5%; }
+            .cta-watermark { font-size: 50vw; top: 10%; transform: translateY(0); right: -10%; }
+            .cta-container { flex-direction: column; align-items: flex-start; gap: 35px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="header-logo">
+            <img src="img/logo-ifs.png" alt="IFS Logo">
+        </a>
+        <nav>
+            <a href="index.html" style="color: #D4B45F;">Início</a>
+            <a href="nucleos.html">Núcleos</a>
+            <a href="equipe.html">Equipe</a>
+            <a href="competicoes.html">Competições</a>
+            <a href="alumni.html">Alumni</a>
+            <a href="processo.html">Processo Seletivo</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="video/video-fundo.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="img/logo-ifs.png" alt="Logo IFS Centro" class="hero-center-logo">
+            <h1>Ibmec Finance Society</h1>
+            <p>A Liga de Mercado Financeiro do Ibmec</p>
+        </div>
+    </section>
+
+    <section id="sobre" class="section-light">
+        <h2 class="section-title title-dark">Sobre Nós</h2>
+        <p class="section-subtitle">
+            A Ibmec Finance Society (IFS-BH) é a liga de Mercado Financeiro do Ibmec Belo Horizonte. Nosso objetivo é
+            aproximar nossos membros do mercado de trabalho, reduzindo a distância entre a experiência universitária e a
+            realidade prática do setor por meio de rotinas de alta performance.
+        </p>
+        <div class="grid-container">
+            <div class="info-card">
+                <h3>Imersão Técnica</h3>
+                <p>Aulas com todo o conteúdo técnico necessário, dominando bases sólidas de Contabilidade e Valuation
+                    aplicadas à realidade do mercado.</p>
+            </div>
+            <div class="info-card">
+                <h3>Atuação Prática</h3>
+                <p>Execução de projetos focados ao longo do semestre em nossos três núcleos de excelência: M&A, Asset
+                    Management e Equity Research.</p>
+            </div>
+            <div class="info-card">
+                <h3>Conexão de Elite</h3>
+                <p>Forte aproximação com o ecossistema financeiro através de encontros com empresas parceiras e
+                    profissionais já inseridos no mercado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <h2 class="section-title title-gold">Depoimentos</h2>
+        <div class="grid-container">
+            <div class="testimonial-card">
+                <p>"A liga foi o divisor de águas na minha carreira. A exigência técnica e a pressão dos projetos reais
+                    me prepararam para o ritmo da Faria Lima antes mesmo de me formar."</p>
+                <div class="testimonial-user">Membro Alumni</div>
+                <div class="testimonial-role">Investment Banking Analyst</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"O networking que construí dentro da IFS-BH abriu portas que eu nem sabia que existiam. É um ambiente
+                    onde o nível de excelência é inegociável."</p>
+                <div class="testimonial-user">Membro Atual</div>
+                <div class="testimonial-role">Diretor de Equity Research</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-darker">
+        <h2 class="section-title title-gold" style="margin-bottom: 70px;">Parceiros Institucionais</h2>
+        <div class="partners-grid">
+            <div class="partner-box butia-logo">
+                <img src="img/parceiro1.png" alt="Butiá Investimentos">
+            </div>
+            <div class="partner-box">
+                <img src="img/parceiro2.png" alt="Portofino Multi Family Office">
+            </div>
+            <div class="partner-box">
+                <img src="img/parceiro3.png" alt="Stokos Wealth Management">
+            </div>
+            <div class="partner-box">
+                <img src="img/parceiro4.png" alt="Araújo Fontes">
+            </div>
+            <div class="partner-box">
+                <img src="img/parceiro5.png" alt="Impacto Assessoria Estratégica">
+            </div>
+            <div class="partner-box">
+                <img src="img/parceiro6.png" alt="Imeri Capital">
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-elite">
+        
+        <div class="cta-watermark">IFS</div>
+        
+        <div class="cta-container">
+            
+            <div class="cta-title-wrapper">
+                <h2 class="cta-title">Onde o Mercado<br>Encontra o Talento<span>.</span></h2>
+            </div>
+            
+            <div class="cta-content-wrapper">
+                <p class="cta-text">
+                    A nossa missão é identificar estudantes excepcionais e transformá-los em profissionais de alta performance. Domine a modelagem financeira, refine a sua visão estratégica e conecte-se com as principais instituições financeiras do país.
+                </p>
+                <a href="processo.html" class="btn-gold-cta">
+                    Ingressar na Liga
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <img src="img/logo-ifs.png" alt="IFS Logo" class="footer-logo-img">
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/ifs_bh" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="nucleos.html">Núcleos</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="competicoes.html">Competições</a></li>
+                    <li><a href="alumni.html">Alumni</a></li>
+                    <li><a href="processo.html">Processo Seletivo</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Endereço e Contato</h4>
+                <p style="margin-bottom: 20px;">
+                    <strong style="color: #F2F4F8;">Ibmec Belo Horizonte</strong><br>
+                    Rua Rio Grande do Norte, 1560<br>
+                    Funcionários, Belo Horizonte - MG<br>
+                    CEP: 30130-138
+                </p>
+                <p>
+                    <strong style="color: #F2F4F8;">E-mail</strong><br>
+                    <a href="mailto:diretoriaifsbh@gmail.com" class="email-link">diretoriaifsbh@gmail.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
+            </div>
+            <div class="developer">
+                Developed by <a href="#" class="dev-signature">Gustavo Henrique</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
