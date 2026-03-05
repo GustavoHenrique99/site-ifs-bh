@@ -747,7 +747,7 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video class="hero-video" autoplay loop muted playsinline poster="img/background-video.jpg">
             <source src="video/video-fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -913,16 +913,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var video = document.querySelector('video');
-            if (video) {
-                video.play().catch(function (error) {
-                    console.log("Autoplay bloqueado pelo navegador. Tentando novamente ao interagir.");
-                });
-            }
-        });
-    </script>
 
 </body>
 
