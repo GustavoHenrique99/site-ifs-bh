@@ -75,6 +75,10 @@
             color: #D4B45F;
         }
 
+        /* HACK MENU MOBILE - Escondido no PC */
+        .menu-toggle { display: none; }
+        .menu-icon { display: none; color: #F2F4F8; font-size: 28px; cursor: pointer; }
+
         /* HERO SECTION - TELA CHEIA PADRONIZADA */
         .hero {
             position: relative;
@@ -388,12 +392,25 @@
             color: #D4B45F;
         }
 
-        /* AJUSTES GLOBAIS E MOBILE PARA EQUIPE */
+        /* =========================================
+           AJUSTES GLOBAIS E MOBILE PARA EQUIPE
+           ========================================= */
         @media (max-width: 900px) {
             header { background: #101622; padding: 15px 5%; }
-            nav { display: none; }
+            
+            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
+            .menu-icon { display: block; }
+            nav {
+                display: none; position: absolute; top: 100px; left: 0; width: 100%;
+                background-color: #101622; flex-direction: column; gap: 0;
+                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            }
+            .menu-toggle:checked ~ nav { display: flex; }
+            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            nav a:last-child { border-bottom: none; }
 
             /* Preservando ajustes específicos da página de equipe */
+            .team-section { padding: 80px 5%; }
             .team-grid {
                 flex-direction: column;
                 align-items: center;
@@ -434,6 +451,10 @@
         <a href="index.html" class="header-logo">
             <img src="img/logo-ifs.png" alt="IFS Logo">
         </a>
+        
+        <input type="checkbox" id="menu-check" class="menu-toggle">
+        <label for="menu-check" class="menu-icon">&#9776;</label>
+
         <nav>
             <a href="index.html">Início</a>
             <a href="nucleos.html">Núcleos</a>
@@ -446,7 +467,7 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
+        <video class="hero-video" autoplay loop muted playsinline poster="img/background-video.jpg">
             <source src="video/video-fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
