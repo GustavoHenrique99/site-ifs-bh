@@ -234,17 +234,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* REMOVIDO: background degradê que causava contraste estranho com fotos recortadas */
-            background-color: transparent; 
+            background-color: #001d30; /* Azul institucional fundo das fotos */
         }
 
         /* ESTILO PARA A IMAGEM DENTRO DO CONTÊINER */
         .member-photo {
             width: 100%;
             height: 100%;
-            /* AJUSTE CRÍTICO: 'contain' garante que a foto inteira caiba no círculo sem cortes */
-            object-fit: contain; 
-            transform: scale(1.15); /* Um pequeno zoom para preencher melhor o espaço do contain */
+            object-fit: cover; 
         }
 
         .member-info {
@@ -434,6 +431,7 @@
                 padding: 15px 5%;
             }
 
+            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
             .menu-icon {
                 display: block;
             }
@@ -466,6 +464,7 @@
                 border-bottom: none;
             }
 
+            /* Preservando ajustes específicos da página de equipe */
             .team-section {
                 padding: 80px 5%;
             }
@@ -481,6 +480,7 @@
                 max-width: 320px;
             }
 
+            /* Ajustes do Footer no Mobile */
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -489,11 +489,6 @@
 
             .footer-brand {
                 align-items: center;
-                width: 100%;
-            }
-            .footer-socials {
-                justify-content: center;
-                width: 100%;
             }
 
             .footer-column h4::after {
@@ -555,7 +550,7 @@
             <div class="member-card">
                 <div class="photo-container">
                     <div class="photo-placeholder">
-                        <img src="img/andre-rodrigues.jpg" alt="André Rodrigues" class="member-photo">
+                        <img src="img/andre-rodrigues.jpg" alt="André Rodrigues" class="member-photo" style="object-position: top;">
                     </div>
                 </div>
                 <div class="member-info">
@@ -570,7 +565,7 @@
             <div class="member-card">
                 <div class="photo-container">
                     <div class="photo-placeholder">
-                        <img src="img/igor-blom.jpg" alt="Igor Blom" class="member-photo">
+                        <img src="img/igor-blom.jpg" alt="Igor Blom" class="member-photo" style="object-position: center 50%;">
                     </div>
                 </div>
                 <div class="member-info">
@@ -591,7 +586,7 @@
             <div class="member-card">
                 <div class="photo-container">
                     <div class="photo-placeholder">
-                        <img src="img/tercio-minardi.jpg" alt="Tércio Minardi" class="member-photo">
+                        <img src="img/tercio-minardi.jpg" alt="Tércio Minardi" class="member-photo" style="object-position: center 30%;">
                     </div>
                 </div>
                 <div class="member-info">
@@ -606,7 +601,7 @@
             <div class="member-card">
                 <div class="photo-container">
                     <div class="photo-placeholder">
-                        <img src="img/andre-laranjeira.jpg" alt="André Laranjeira" class="member-photo">
+                        <img src="img/andre-laranjeira.jpg" alt="André Laranjeira" class="member-photo" style="object-position: center 50%; transform: scale(1.3);">
                     </div>
                 </div>
                 <div class="member-info">
@@ -621,7 +616,7 @@
             <div class="member-card">
                 <div class="photo-container">
                     <div class="photo-placeholder">
-                        <img src="img/gabriel-moura.jpg" alt="Gabriel Moura" class="member-photo">
+                        <img src="img/gabriel-moura.jpg" alt="Gabriel Moura" class="member-photo" style="object-position: top;">
                     </div>
                 </div>
                 <div class="member-info">
