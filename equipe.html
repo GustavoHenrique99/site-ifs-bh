@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Equipe | IFS-BH</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <style>
         /* RESET E PALETA OFICIAL IFS */
         * {
@@ -19,7 +17,6 @@
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #101622;
-            /* ROXO PROFUNDO IFS */
             color: #F2F4F8;
             overflow-x: hidden;
             line-height: 1.6;
@@ -140,7 +137,6 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-top: 15px;
-            /* Espaço entre o Título e o Subtítulo */
             margin-bottom: 0;
         }
 
@@ -153,154 +149,302 @@
             line-height: 1.2;
         }
 
-        /* SEÇÃO DE EQUIPE - DESIGN DE MOSAICO/CARDS */
-        .team-section {
-            padding: 120px 8%;
-            text-align: center;
-        }
-
-        /* Padronizando tudo para a cor clara para evitar o "derretimento" no footer */
-        .team-section.light {
+        /* =========================================
+           SISTEMA DE ABAS (TABS) - HISTÓRICO
+           ========================================= */
+        .history-section {
             background-color: #F2F4F8;
             color: #101622;
+            padding: 60px 5%; 
+            min-height: auto;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 4vw, 48px);
-            margin-bottom: 25px;
+        .tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tabs-header {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+            border-bottom: 2px solid rgba(0, 29, 48, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: #8898aa;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
             position: relative;
-            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tab-btn:hover {
             color: #001d30;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: #B7891C;
+        .tab-btn.active {
+            color: #D4B45F;
         }
 
-        .team-grid {
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #D4B45F;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeInTab 0.5s ease forwards;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeInTab {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* LAYOUT PRINCIPAL: PROPORÇÃO AJUSTADA E ALINHAMENTO CENTRAL */
+        .semester-content {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr; /* 60% Esquerda | 40% Direita */
+            gap: 50px;
+            align-items: center; /* CENTRALIZA O QUADRO DO CHALLENGE VERTICALMENTE */
+        }
+
+        /* COLUNA ESQUERDA: DIRETORIA */
+        .board-column {
+            display: flex;
+            flex-direction: column;
+            gap: 45px;
+        }
+        
+        .board-group-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #001d30;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .board-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
-            margin-top: 60px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            gap: 15px; 
         }
 
         /* CARD DO MEMBRO - DARK PREMIUM */
         .member-card {
-            width: 280px;
+            width: 100%;
+            max-width: 185px; 
             border-radius: 8px;
-            /* Canto levemente mais arredondado */
             overflow: hidden;
             transition: all 0.4s ease;
             text-align: center;
             background: linear-gradient(145deg, #101622 0%, #0a0e17 100%);
-            /* Fundo azul profundo elegante */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(212, 180, 95, 0.15);
-            /* Borda dourada sutil em volta de todo o card */
-            border-bottom: 4px solid #D4B45F;
-            /* Base dourada forte */
+            border-bottom: 3px solid #D4B45F;
         }
 
         .member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 45px rgba(0, 29, 48, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 29, 48, 0.3);
             border-color: rgba(212, 180, 95, 0.4);
         }
 
-        /* CONTÊINER CIRCULAR DA FOTO */
         .photo-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            padding-top: 35px;
+            padding-top: 25px;
             padding-bottom: 10px;
         }
 
         .photo-placeholder {
-            width: 180px;
-            height: 180px;
+            width: 120px; 
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #D4B45F;
-            /* Borda da foto mais fina e refinada */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #D4B45F;
+            background-color: #001d30;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle, #252e3e 0%, #001d30 100%);
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 10px;
+            text-transform: uppercase;
         }
 
-        /* ESTILO PARA A IMAGEM DENTRO DO CONTÊINER */
         .member-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform: scale(1.15);
+        }
+
+        .member-info {
+            padding: 15px 10px 25px;
+        }
+
+        .member-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px; 
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: #F2F4F8;
+        }
+
+        .member-role {
+            font-size: 10px;
+            font-weight: 700;
+            color: #D4B45F;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* COLUNA DIREITA: CHALLENGE E HISTÓRICO PREMIUM */
+        .challenge-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .challenge-box {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 29, 48, 0.08);
+            border-top: 5px solid #D4B45F; 
+            border-bottom: 5px solid #001d30; 
+            padding: 35px 30px; 
+            position: relative;
+        }
+
+        .challenge-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 40px;
+            width: 30px;
+            height: 45px;
+            background-color: rgba(212, 180, 95, 0.1);
+            border-right: 2px solid #D4B45F;
+            border-left: 2px solid #D4B45F;
+            border-bottom: 2px solid #D4B45F;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .challenge-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #001d30;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        /* Novo Subtítulo do Challenge (Campeões e Empresa) */
+        .challenge-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #D4B45F;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .challenge-photo-placeholder {
+            width: 100%;
+            height: 220px; 
+            background-color: rgba(212, 180, 95, 0.03); 
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B7891C; 
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            border: 2px dashed #D4B45F; 
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+        
+        .challenge-photo-placeholder:hover {
+            background-color: rgba(212, 180, 95, 0.08);
+        }
+
+        .challenge-photo-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .member-info {
-            padding: 20px 25px 35px;
+        .challenge-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .member-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            margin-bottom: 5px;
-            font-weight: 700;
-            color: #F2F4F8;
-            /* Nome em branco para contrastar com o card escuro */
+        .detail-item {
+            font-size: 14px;
+            color: #101622;
+            font-weight: 500;
+            line-height: 1.5;
+            background-color: #ffffff;
+            padding: 12px 18px;
+            border-radius: 6px;
+            border-left: 3px solid #001d30;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
         }
 
-        .member-role {
-            font-size: 11px;
+        .detail-item:hover {
+            border-left-color: #D4B45F;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transform: translateX(5px);
+        }
+
+        .detail-label {
             font-weight: 700;
-            color: #D4B45F;
-            /* Dourado mais brilhante */
+            color: #D4B45F; 
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .member-period {
-            font-size: 12px;
-            margin-bottom: 20px;
-            color: #adcbd6;
-            /* Azul clarinho sutil */
-        }
-
-        .linkedin-btn {
-            display: inline-block;
             font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            padding-bottom: 3px;
-            border-bottom: 2px solid #D4B45F;
-            transition: 0.3s;
-            color: #F2F4F8;
-            /* Link em branco */
-        }
-
-        .linkedin-btn:hover {
-            color: #B7891C;
-            border-color: transparent;
+            letter-spacing: 1.5px;
+            display: block; 
+            margin-bottom: 3px;
+            opacity: 0.9;
         }
 
         /* =========================================
-           RODAPÉ PREMIUM DEFINITIVO - EQUIPE
+           RODAPÉ PREMIUM DEFINITIVO
            ========================================= */
         footer {
             background-color: #0a0e17;
@@ -435,88 +579,45 @@
         /* =========================================
            AJUSTES GLOBAIS E MOBILE PARA EQUIPE
            ========================================= */
-        @media (max-width: 900px) {
-            header {
-                background: #101622;
-                padding: 15px 5%;
-            }
-
-            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
-            .menu-icon {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 100px;
-                left: 0;
-                width: 100%;
-                background-color: #101622;
-                flex-direction: column;
-                gap: 0;
-                padding: 20px 0;
-                border-bottom: 2px solid #D4B45F;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            }
-
-            .menu-toggle:checked~nav {
-                display: flex;
-            }
-
-            nav a {
-                padding: 15px 5%;
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            nav a:last-child {
-                border-bottom: none;
-            }
-
-            /* Preservando ajustes específicos da página de equipe */
-            .team-section {
-                padding: 80px 5%;
-            }
-
-            .team-grid {
-                flex-direction: column;
-                align-items: center;
-                gap: 40px;
-            }
-
-            .member-card {
-                width: 100%;
-                max-width: 320px;
-            }
-
-            /* Ajustes do Footer no Mobile */
-            .footer-grid {
+        @media (max-width: 1024px) {
+            .semester-content {
                 grid-template-columns: 1fr;
-                text-align: center;
-                gap: 50px;
             }
+            .challenge-box {
+                margin-top: 20px;
+            }
+        }
 
-            .footer-brand {
-                align-items: center;
+        @media (max-width: 900px) {
+            header { background: #101622; padding: 15px 5%; }
+            .menu-icon { display: block; }
+            nav {
+                display: none; position: absolute; top: 100px; left: 0; width: 100%;
+                background-color: #101622; flex-direction: column; gap: 0;
+                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             }
-
-            .footer-column h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .footer-column ul li a,
-            .footer-column p,
-            .footer-column a.email-link {
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
+            .menu-toggle:checked~nav { display: flex; }
+            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+            nav a:last-child { border-bottom: none; }
+            
+            .history-section { padding: 50px 5%; }
+            .tabs-header { gap: 10px; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 20px; -webkit-overflow-scrolling: touch; }
+            .tab-btn { flex: 0 0 auto; font-size: 14px; }
+            
+            .board-grid { flex-direction: column; align-items: center; }
+            .member-card { max-width: 280px; }
+            .photo-placeholder { width: 160px; height: 160px; }
+            
+            .challenge-box { padding: 25px; }
+            .challenge-box::before { right: 25px; }
+            .detail-item { padding: 12px 15px; }
+            
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
+            .footer-brand { align-items: center; width: 100%; }
+            .footer-socials { justify-content: center; width: 100%; }
+            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
         }
     </style>
 </head>
@@ -548,99 +649,340 @@
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Nossa Equipe</h1>
-            <p>Gestão e Estratégia</p>
+            <h1>Nossa História</h1>
+            <p>O Legado da Liga</p>
         </div>
     </section>
 
-    <section class="team-section light">
-        <h2 class="section-title">Presidência</h2>
-        <div class="team-grid">
+    <section class="history-section">
+        <div class="tabs-container">
+            
+            <div class="tabs-header">
+                <button class="tab-btn active" data-target="sem-2026-1">2026.1</button>
+                <button class="tab-btn" data-target="sem-2025-2">2025.2</button>
+                <button class="tab-btn" data-target="sem-2025-1">2025.1</button>
+                <button class="tab-btn" data-target="sem-2024-2">2024.2</button>
+                <button class="tab-btn" data-target="sem-2024-1">2024.1</button>
+            </div>
 
-            <div class="member-card">
-                <div class="photo-container">
-                    <div class="photo-placeholder">
-                        <img src="img/andre-rodrigues.jpg" alt="André Rodrigues" class="member-photo"
-                            style="object-position: top;">
+            <div class="tab-pane active" id="sem-2026-1">
+                <div class="semester-content">
+                    <div class="board-column">
+                        <div>
+                            <h3 class="board-group-title">Presidência</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/andre-rodrigues.jpg" alt="André Rodrigues" class="member-photo" style="object-position: center 65%;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">André Rodrigues</div>
+                                        <div class="member-role">Presidente</div>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/igor-blom.jpg" alt="Igor Blom" class="member-photo" style="object-position: center 10%;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Igor Blom</div>
+                                        <div class="member-role">Vice-Presidente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="board-group-title">Diretores</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/tercio-minardi.jpg" alt="Tércio Minardi" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Tércio Minardi</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/andre-laranjeira.jpg" alt="André Laranjeira" class="member-photo" style="object-position: center 50%;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">André Laranjeira</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/gabriel-moura.jpg" alt="Gabriel Moura" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Gabriel Moura</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="member-info">
-                    <div class="member-name">André Rodrigues</div>
-                    <div class="member-role">Presidente</div>
-                    <div class="member-period">6º Período</div>
-                    <a href="https://www.linkedin.com/in/andrerodriguesevangelista/" target="_blank"
-                        class="linkedin-btn">Perfil Linkedin</a>
+                    <div class="challenge-column">
+                        <div class="challenge-box">
+                            <h3 class="challenge-title">
+                                Challenge Interno de Valuation
+                                <span class="challenge-subtitle">A DEFINIR | EMPRESA A DEFINIR</span>
+                            </h3>
+                            <div class="challenge-photo-placeholder">
+                                Imagem do Challenge 2026.1 (Auditório)
+                            </div>
+                            <div class="challenge-details">
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> A DEFINIR</div>
+                                <div class="detail-item"><span class="detail-label">Padrinho:</span> A DEFINIR</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> A DEFINIR</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="member-card">
-                <div class="photo-container">
-                    <div class="photo-placeholder">
-                        <img src="img/igor-blom.jpg" alt="Igor Blom" class="member-photo"
-                            style="object-position: center 50%;">
+            <div class="tab-pane" id="sem-2025-2">
+                <div class="semester-content">
+                    <div class="board-column">
+                        <div>
+                            <h3 class="board-group-title">Presidência</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">Felipe Pinho</div>
+                                        <div class="member-role">Presidente</div>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">Guilherme Cardoso</div>
+                                        <div class="member-role">Vice-Presidente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="board-group-title">Diretores</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Luiza Costa</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Leon David</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">João Pedro Amaral</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Vinícius Costa</div><div class="member-role">Diretor</div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="member-info">
-                    <div class="member-name">Igor Blom</div>
-                    <div class="member-role">Vice-Presidente</div>
-                    <div class="member-period">3º Período</div>
-                    <a href="https://www.linkedin.com/in/igor-blom-a23922354/" target="_blank"
-                        class="linkedin-btn">Perfil Linkedin</a>
+                    <div class="challenge-column">
+                        <div class="challenge-box">
+                            <h3 class="challenge-title">
+                                Challenge Interno de Valuation
+                                <span class="challenge-subtitle">CHAMA CAPITAL | TRACK&FIELD</span>
+                            </h3>
+                            <div class="challenge-photo-placeholder">
+                                Imagem do Challenge 2025.2
+                            </div>
+                            <div class="challenge-details">
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> André Rodrigues</div>
+                                <div class="detail-item"><span class="detail-label">Padrinho:</span> Lucas Lima</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> André Soares, João César Soares, Gabriel Cancellieri, Samuel Morgan, Gabriel Gonçalves</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <section class="team-section light" style="padding-top: 0;">
-        <h2 class="section-title">Diretores</h2>
-        <div class="team-grid">
-
-            <div class="member-card">
-                <div class="photo-container">
-                    <div class="photo-placeholder">
-                        <img src="img/tercio-minardi.jpg" alt="Tércio Minardi" class="member-photo"
-                            style="object-position: center 30%;">
+            <div class="tab-pane" id="sem-2025-1">
+                <div class="semester-content">
+                    <div class="board-column">
+                        <div>
+                            <h3 class="board-group-title">Presidência</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">Rafael Freire</div>
+                                        <div class="member-role">Presidente</div>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">Luis Flávio Coelho</div>
+                                        <div class="member-role">Vice-Presidente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="board-group-title">Diretores</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">André Pires</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Otávio David</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Lucas Lima</div><div class="member-role">Diretor</div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="member-info">
-                    <div class="member-name">Tércio Minardi</div>
-                    <div class="member-role">Diretor</div>
-                    <div class="member-period">3º Período</div>
-                    <a href="https://www.linkedin.com/in/t%C3%A9rciominardipedrosa/" target="_blank"
-                        class="linkedin-btn">Perfil Linkedin</a>
+                    <div class="challenge-column">
+                        <div class="challenge-box">
+                            <h3 class="challenge-title">
+                                Challenge Interno de Valuation
+                                <span class="challenge-subtitle">EAGLE CAPITAL | EMBRAER</span>
+                            </h3>
+                            <div class="challenge-photo-placeholder">
+                                Imagem do Challenge 2025.1
+                            </div>
+                            <div class="challenge-details">
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Felipe Pinho</div>
+                                <div class="detail-item"><span class="detail-label">Padrinho:</span> Otávio David</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> Igor Blom, Humberto Félix, Luiz Gustavo Vilela, Maria Eduarda Gomes, Eduarda Coura, Júlia Veriano</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="member-card">
-                <div class="photo-container">
-                    <div class="photo-placeholder">
-                        <img src="img/andre-laranjeira.jpg" alt="André Laranjeira" class="member-photo"
-                            style="object-position: center 50%; transform: scale(1.3);">
+            <div class="tab-pane" id="sem-2024-2">
+                <div class="semester-content">
+                    <div class="board-column">
+                        <div>
+                            <h3 class="board-group-title">Presidência</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">Eduardo Coelho</div>
+                                        <div class="member-role">Presidente</div>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">Luca Guimarães</div>
+                                        <div class="member-role">Vice-Presidente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="board-group-title">Diretores</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Alice Areas</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Ana Clara Bacha</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Alice Prati</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Brenda Garcez</div><div class="member-role">Diretor</div></div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">Lucas Martins</div><div class="member-role">Diretor</div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="member-info">
-                    <div class="member-name">André Laranjeira</div>
-                    <div class="member-role">Diretor</div>
-                    <div class="member-period">4º Período</div>
-                    <a href="https://www.linkedin.com/in/andre-laranjeira-763466310/" target="_blank"
-                        class="linkedin-btn">Perfil Linkedin</a>
+                    <div class="challenge-column">
+                        <div class="challenge-box">
+                            <h3 class="challenge-title">
+                                Challenge Interno de Valuation
+                                <span class="challenge-subtitle">VANGUARD CAPITAL | MATER DEI</span>
+                            </h3>
+                            <div class="challenge-photo-placeholder">
+                                Imagem do Challenge 2024.2
+                            </div>
+                            <div class="challenge-details">
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Rafael Freire</div>
+                                <div class="detail-item"><span class="detail-label">Padrinho:</span> Vinícius Campos</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> Luiza Costa, Leon David, Guilherme Cardoso, Theo Oliveira e Bernardo Brasil</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="member-card">
-                <div class="photo-container">
-                    <div class="photo-placeholder">
-                        <img src="img/gabriel-moura.jpg" alt="Gabriel Moura" class="member-photo"
-                            style="object-position: top;">
+            <div class="tab-pane" id="sem-2024-1">
+                <div class="semester-content">
+                    <div class="board-column">
+                        <div>
+                            <h3 class="board-group-title">Presidência</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info">
+                                        <div class="member-name">A Definir</div>
+                                        <div class="member-role">Presidente</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="board-group-title">Diretores</h3>
+                            <div class="board-grid">
+                                <div class="member-card">
+                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="member-info"><div class="member-name">A Definir</div><div class="member-role">Diretor</div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="member-info">
-                    <div class="member-name">Gabriel Moura</div>
-                    <div class="member-role">Diretor</div>
-                    <div class="member-period">3º Período</div>
-                    <a href="https://www.linkedin.com/in/gabriel-henrique-a34477360/" target="_blank"
-                        class="linkedin-btn">Perfil Linkedin</a>
+                    <div class="challenge-column">
+                        <div class="challenge-box">
+                            <h3 class="challenge-title">
+                                Challenge Interno de Valuation
+                                <span class="challenge-subtitle">PEGASUS CAPITAL | MULTIPLAN</span>
+                            </h3>
+                            <div class="challenge-photo-placeholder">
+                                Imagem do Challenge 2024.1
+                            </div>
+                            <div class="challenge-details">
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Luca Guimarães</div>
+                                <div class="detail-item"><span class="detail-label">Padrinho:</span> Lucas Greco</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> Helena Gomes, Maria Clara Paschoalin, Manuela Gusmao, Lucas Torres, Daniel Cabral e João Campos</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -649,26 +991,17 @@
 
     <footer>
         <div class="footer-grid">
-
             <div class="footer-brand">
                 <img src="img/logo-ifs.png" alt="IFS Logo" class="footer-logo-img">
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank"
-                        aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
+                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
                     </a>
                     <a href="https://instagram.com/ifs_bh" target="_blank" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
                     </a>
                 </div>
             </div>
-
             <div class="footer-column">
                 <h4>Navegação</h4>
                 <ul>
@@ -680,7 +1013,6 @@
                     <li><a href="processo.html">Processo Seletivo</a></li>
                 </ul>
             </div>
-
             <div class="footer-column">
                 <h4>Endereço e Contato</h4>
                 <p style="margin-bottom: 20px;">
@@ -694,9 +1026,7 @@
                     <a href="mailto:diretoriaifsbh@gmail.com" class="email-link">diretoriaifsbh@gmail.com</a>
                 </p>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <div class="copyright">
                 &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
@@ -709,6 +1039,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Lógica do Vídeo de Fundo
             var video = document.getElementById("meuVideo");
             if (video) {
                 var playPromise = video.play();
@@ -718,6 +1049,25 @@
                     });
                 }
             }
+
+            // Lógica do Sistema de Abas (Tabs)
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove classe active de todos os botões e abas
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+
+                    // Adiciona classe active no botão clicado
+                    btn.classList.add('active');
+
+                    // Mostra o conteúdo correspondente
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
         });
     </script>
 </body>
