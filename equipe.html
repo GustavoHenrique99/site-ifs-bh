@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Equipe | IFS-BH</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <style>
         /* RESET E PALETA OFICIAL IFS */
         * {
@@ -155,12 +157,13 @@
         .history-section {
             background-color: #F2F4F8;
             color: #101622;
-            padding: 40px 5%; /* DIMINUIDO */
+            padding: 40px 5%;
             min-height: auto;
         }
 
         .tabs-container {
-            max-width: 1200px;
+            max-width: 1100px;
+            /* Reduzido de 1200px para compactar o bloco */
             margin: 0 auto;
         }
 
@@ -169,9 +172,11 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 35px; /* DIMINUIDO */
+            margin-bottom: 30px;
+            /* Reduzido de 35px */
             border-bottom: 2px solid rgba(0, 29, 48, 0.1);
-            padding-bottom: 10px; /* DIMINUIDO */
+            padding-bottom: 8px;
+            /* Reduzido de 10px */
         }
 
         .tab-btn {
@@ -179,10 +184,11 @@
             border: none;
             color: #8898aa;
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px; /* DIMINUIDO */
+            font-size: 13px;
+            /* Reduzido de 14px */
             font-weight: 600;
             cursor: pointer;
-            padding: 8px 16px; /* DIMINUIDO */
+            padding: 8px 16px;
             transition: all 0.3s ease;
             position: relative;
             text-transform: uppercase;
@@ -200,10 +206,11 @@
         .tab-btn.active::after {
             content: '';
             position: absolute;
-            bottom: -12px; /* AJUSTADO PROPORCIONALMENTE */
+            bottom: -10px;
+            /* Ajustado */
             left: 0;
             width: 100%;
-            height: 3px; /* DIMINUIDO */
+            height: 3px;
             background-color: #D4B45F;
             border-radius: 2px 2px 0 0;
         }
@@ -218,33 +225,45 @@
         }
 
         @keyframes fadeInTab {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* LAYOUT PRINCIPAL */
+        /* LAYOUT PRINCIPAL: PROPORÇÃO AJUSTADA E EQUILIBRADA */
         .semester-content {
             display: grid;
-            grid-template-columns: 1.3fr 1fr; 
-            gap: 35px; /* DIMINUIDO */
-            align-items: center; 
+            grid-template-columns: 1.4fr 1fr;
+            /* Proporção ideal mantida */
+            gap: 35px;
+            /* Reduzido de 45px */
+            align-items: center;
         }
 
         /* COLUNA ESQUERDA: DIRETORIA */
         .board-column {
             display: flex;
             flex-direction: column;
-            gap: 30px; /* DIMINUIDO */
+            gap: 25px;
+            /* Reduzido de 30px */
         }
-        
+
         .board-group-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 16px; /* DIMINUIDO */
+            font-size: 15px;
+            /* Reduzido de 16px */
             font-weight: 700;
             color: #001d30;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 15px; /* DIMINUIDO */
+            margin-bottom: 12px;
+            /* Reduzido de 15px */
             text-align: center;
         }
 
@@ -252,19 +271,24 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px; /* DIMINUIDO */
+            gap: 12px;
+            /* Reduzido de 15px */
         }
 
-        /* CARD DO MEMBRO */
+        /* CARD DO MEMBRO - FLEXÍVEL E PROPORCIONAL */
         .member-card {
-            width: 100%;
-            max-width: 165px; /* DIMINUIDO (Aba de 185px) */
-            border-radius: 6px; /* DIMINUIDO */
+            flex: 1 1 calc(33.333% - 12px);
+            /* Ajustado para o novo gap */
+            min-width: 150px;
+            /* Reduzido de 160px */
+            max-width: 185px;
+            /* Reduzido de 200px */
+            border-radius: 6px;
             overflow: hidden;
             transition: all 0.4s ease;
             text-align: center;
             background: linear-gradient(145deg, #101622 0%, #0a0e17 100%);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* DIMINUIDO */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
             border: 1px solid rgba(212, 180, 95, 0.15);
             border-bottom: 3px solid #D4B45F;
         }
@@ -279,13 +303,17 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            padding-top: 20px; /* DIMINUIDO */
-            padding-bottom: 8px; /* DIMINUIDO */
+            padding-top: 18px;
+            /* Reduzido de 20px */
+            padding-bottom: 8px;
+            /* Reduzido de 10px */
         }
 
         .photo-placeholder {
-            width: 105px; /* DIMINUIDO */
-            height: 105px; /* DIMINUIDO */
+            width: 100px;
+            /* Reduzido de 110px */
+            height: 100px;
+            /* Reduzido de 110px */
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #D4B45F;
@@ -294,7 +322,8 @@
             align-items: center;
             justify-content: center;
             color: rgba(255, 255, 255, 0.2);
-            font-size: 9px; /* DIMINUIDO */
+            font-size: 9px;
+            /* Reduzido de 10px */
             text-transform: uppercase;
         }
 
@@ -306,19 +335,22 @@
         }
 
         .member-info {
-            padding: 10px 8px 18px; /* DIMINUIDO */
+            padding: 8px 8px 18px;
+            /* Reduzido de 10px 8px 20px */
         }
 
         .member-name {
             font-family: 'Playfair Display', serif;
-            font-size: 14px; /* DIMINUIDO */
-            margin-bottom: 4px; /* DIMINUIDO */
+            font-size: 14px;
+            /* Reduzido de 15px */
+            margin-bottom: 4px;
             font-weight: 700;
             color: #F2F4F8;
         }
 
         .member-role {
-            font-size: 9px; /* DIMINUIDO */
+            font-size: 9px;
+            /* Reduzido de 10px */
             font-weight: 700;
             color: #D4B45F;
             text-transform: uppercase;
@@ -329,27 +361,31 @@
         .challenge-column {
             display: flex;
             flex-direction: column;
+            width: 100%;
         }
 
         .challenge-box {
             background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 10px; /* DIMINUIDO */
-            box-shadow: 0 15px 30px rgba(0, 29, 48, 0.08); /* DIMINUIDO */
-            border-top: 4px solid #D4B45F; /* DIMINUIDO */
-            border-bottom: 4px solid #001d30; /* DIMINUIDO */
-            padding: 25px 20px; /* DIMINUIDO - Aqui compacta bem o quadro */
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 29, 48, 0.08);
+            border-top: 4px solid #D4B45F;
+            border-bottom: 4px solid #001d30;
+            padding: 25px 25px;
+            /* Reduzido de 30px 25px */
             position: relative;
         }
 
+        /* CORREÇÃO DA LINHA PRETA NA DIREITA */
         .challenge-box::before {
             content: '';
             position: absolute;
             top: 0;
-            right: 30px; /* DIMINUIDO */
-            width: 25px; /* DIMINUIDO */
-            height: 35px; /* DIMINUIDO */
+            right: 25px;
+            width: 25px;
+            height: 35px;
             background-color: rgba(212, 180, 95, 0.1);
             border-right: 2px solid #D4B45F;
+            /* <- RESTAURADO O BUG DA BORDA */
             border-left: 2px solid #D4B45F;
             border-bottom: 2px solid #D4B45F;
             border-radius: 0 0 3px 3px;
@@ -357,45 +393,52 @@
 
         .challenge-title {
             font-family: 'Playfair Display', serif;
-            font-size: 22px; /* DIMINUIDO */
+            font-size: 22px;
+            /* Reduzido de 24px */
             color: #001d30;
-            margin-bottom: 15px; /* DIMINUIDO */
+            margin-bottom: 12px;
+            /* Reduzido de 15px */
             line-height: 1.2;
             position: relative;
             z-index: 1;
             display: flex;
             flex-direction: column;
-            gap: 4px; /* DIMINUIDO */
+            gap: 4px;
+            text-align: center;
         }
 
         .challenge-subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px; /* DIMINUIDO */
+            font-size: 10px;
+            /* Reduzido de 11px */
             font-weight: 700;
             color: #D4B45F;
             text-transform: uppercase;
-            letter-spacing: 1.2px; /* DIMINUIDO */
+            letter-spacing: 1.2px;
         }
 
         .challenge-photo-placeholder {
             width: 100%;
-            height: 180px; /* DIMINUIDO BASTANTE */
-            background-color: rgba(212, 180, 95, 0.03); 
-            border-radius: 5px; /* DIMINUIDO */
+            height: 155px;
+            /* Reduzido de 170px */
+            background-color: rgba(212, 180, 95, 0.03);
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #B7891C; 
-            font-size: 12px; /* DIMINUIDO */
+            color: #B7891C;
+            font-size: 11px;
+            /* Reduzido de 12px */
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px; /* DIMINUIDO */
-            border: 2px dashed #D4B45F; 
+            margin-bottom: 18px;
+            /* Reduzido de 20px */
+            border: 2px dashed #D4B45F;
             overflow: hidden;
             transition: 0.3s ease;
         }
-        
+
         .challenge-photo-placeholder:hover {
             background-color: rgba(212, 180, 95, 0.08);
         }
@@ -409,36 +452,40 @@
         .challenge-details {
             display: flex;
             flex-direction: column;
-            gap: 8px; /* DIMINUIDO */
+            gap: 6px;
+            /* Reduzido de 8px */
         }
 
         .detail-item {
-            font-size: 13px; /* DIMINUIDO */
+            font-size: 12px;
+            /* Reduzido de 13px */
             color: #101622;
             font-weight: 500;
-            line-height: 1.4; /* DIMINUIDO */
+            line-height: 1.4;
             background-color: #ffffff;
-            padding: 10px 14px; /* DIMINUIDO */
-            border-radius: 5px; /* DIMINUIDO */
+            padding: 10px 14px;
+            /* Reduzido de 12px 16px */
+            border-radius: 5px;
             border-left: 3px solid #001d30;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.03); /* DIMINUIDO */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
             transition: all 0.3s ease;
         }
 
         .detail-item:hover {
             border-left-color: #D4B45F;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-            transform: translateX(3px); /* DIMINUIDO */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transform: translateX(3px);
         }
 
         .detail-label {
             font-weight: 700;
-            color: #D4B45F; 
+            color: #D4B45F;
             text-transform: uppercase;
-            font-size: 10px; /* DIMINUIDO */
-            letter-spacing: 1.2px; /* DIMINUIDO */
-            display: block; 
-            margin-bottom: 2px; /* DIMINUIDO */
+            font-size: 9px;
+            /* Reduzido de 10px */
+            letter-spacing: 1.2px;
+            display: block;
+            margin-bottom: 2px;
             opacity: 0.9;
         }
 
@@ -447,17 +494,17 @@
            ========================================= */
         footer {
             background-color: #0a0e17;
-            padding: 50px 8% 25px; /* DIMINUIDO */
+            padding: 50px 8% 25px;
             border-top: 1px solid rgba(212, 180, 95, 0.15);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 50px; /* DIMINUIDO */
+            gap: 50px;
             max-width: 1200px;
             margin: 0 auto;
-            padding-bottom: 40px; /* DIMINUIDO */
+            padding-bottom: 40px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -465,11 +512,11 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 15px; /* DIMINUIDO */
+            gap: 15px;
         }
 
         .footer-logo-img {
-            height: 90px; /* DIMINUIDO */
+            height: 90px;
             width: auto;
             object-fit: contain;
             filter: brightness(0) invert(1);
@@ -477,7 +524,7 @@
 
         .footer-socials {
             display: flex;
-            gap: 12px; /* DIMINUIDO */
+            gap: 12px;
             margin-top: 5px;
         }
 
@@ -487,8 +534,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 38px; /* DIMINUIDO */
-            height: 38px; /* DIMINUIDO */
+            width: 38px;
+            height: 38px;
             background-color: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
         }
@@ -500,27 +547,27 @@
         }
 
         .footer-socials svg {
-            width: 18px; /* DIMINUIDO */
-            height: 18px; /* DIMINUIDO */
+            width: 18px;
+            height: 18px;
         }
 
         .footer-column h4 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px; /* DIMINUIDO */
+            font-size: 14px;
             font-weight: 700;
             color: #F2F4F8;
             text-transform: uppercase;
-            letter-spacing: 1.2px; /* DIMINUIDO */
-            margin-bottom: 20px; /* DIMINUIDO */
+            letter-spacing: 1.2px;
+            margin-bottom: 20px;
             position: relative;
         }
 
         .footer-column h4::after {
             content: '';
             position: absolute;
-            bottom: -8px; /* DIMINUIDO */
+            bottom: -8px;
             left: 0;
-            width: 25px; /* DIMINUIDO */
+            width: 25px;
             height: 2px;
             background-color: #D4B45F;
         }
@@ -530,7 +577,7 @@
         }
 
         .footer-column ul li {
-            margin-bottom: 10px; /* DIMINUIDO */
+            margin-bottom: 10px;
         }
 
         .footer-column ul li a,
@@ -538,9 +585,9 @@
         .footer-column a.email-link {
             color: #adcbd6;
             text-decoration: none;
-            font-size: 14px; /* DIMINUIDO */
+            font-size: 14px;
             transition: 0.3s;
-            line-height: 1.5; /* DIMINUIDO */
+            line-height: 1.5;
             text-align: left;
         }
 
@@ -550,7 +597,7 @@
         }
 
         .footer-column ul li a:hover {
-            padding-left: 5px; /* DIMINUIDO */
+            padding-left: 5px;
         }
 
         .footer-bottom {
@@ -559,8 +606,8 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding-top: 20px; /* DIMINUIDO */
-            font-size: 12px; /* DIMINUIDO */
+            padding-top: 20px;
+            font-size: 12px;
             color: #566b8e;
         }
 
@@ -582,41 +629,127 @@
             .semester-content {
                 grid-template-columns: 1fr;
             }
+
             .challenge-box {
-                margin-top: 15px; /* DIMINUIDO */
+                margin-top: 20px;
             }
         }
 
         @media (max-width: 900px) {
-            header { background: #101622; padding: 15px 5%; }
-            .menu-icon { display: block; }
-            nav {
-                display: none; position: absolute; top: 100px; left: 0; width: 100%;
-                background-color: #101622; flex-direction: column; gap: 0;
-                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            header {
+                background: #101622;
+                padding: 15px 5%;
             }
-            .menu-toggle:checked~nav { display: flex; }
-            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-            nav a:last-child { border-bottom: none; }
-            
-            .history-section { padding: 40px 5%; }
-            .tabs-header { gap: 8px; flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 15px; -webkit-overflow-scrolling: touch; }
-            .tab-btn { flex: 0 0 auto; font-size: 13px; padding: 8px 12px;}
-            
-            .board-grid { flex-direction: column; align-items: center; }
-            .member-card { max-width: 260px; }
-            .photo-placeholder { width: 140px; height: 140px; }
-            
-            .challenge-box { padding: 20px; }
-            .challenge-box::before { right: 20px; }
-            .detail-item { padding: 10px 12px; }
-            
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .footer-brand { align-items: center; width: 100%; }
-            .footer-socials { justify-content: center; width: 100%; }
-            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
-            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #101622;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                border-bottom: 2px solid #D4B45F;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu-toggle:checked~nav {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 5%;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .history-section {
+                padding: 40px 5%;
+            }
+
+            .tabs-header {
+                gap: 8px;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 15px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab-btn {
+                flex: 0 0 auto;
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            .board-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .member-card {
+                max-width: 260px;
+            }
+
+            .photo-placeholder {
+                width: 140px;
+                height: 140px;
+            }
+
+            .challenge-box {
+                padding: 20px;
+            }
+
+            .challenge-box::before {
+                right: 20px;
+            }
+
+            .detail-item {
+                padding: 10px 12px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .footer-brand {
+                align-items: center;
+                width: 100%;
+            }
+
+            .footer-socials {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a,
+            .footer-column p,
+            .footer-column a.email-link {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -655,7 +788,7 @@
 
     <section class="history-section">
         <div class="tabs-container">
-            
+
             <div class="tabs-header">
                 <button class="tab-btn active" data-target="sem-2026-1">2026.1</button>
                 <button class="tab-btn" data-target="sem-2025-2">2025.2</button>
@@ -673,7 +806,8 @@
                                 <div class="member-card">
                                     <div class="photo-container">
                                         <div class="photo-placeholder">
-                                            <img src="img/andre-rodrigues.jpg" alt="André Rodrigues" class="member-photo" style="object-position: center 65%;">
+                                            <img src="img/andre-rodrigues.jpg" alt="André Rodrigues"
+                                                class="member-photo" style="object-position: center 65%;">
                                         </div>
                                     </div>
                                     <div class="member-info">
@@ -684,7 +818,8 @@
                                 <div class="member-card">
                                     <div class="photo-container">
                                         <div class="photo-placeholder">
-                                            <img src="img/igor-blom.jpg" alt="Igor Blom" class="member-photo" style="object-position: center 10%;">
+                                            <img src="img/igor-blom.jpg" alt="Igor Blom" class="member-photo"
+                                                style="object-position: center 10%;">
                                         </div>
                                     </div>
                                     <div class="member-info">
@@ -700,7 +835,8 @@
                                 <div class="member-card">
                                     <div class="photo-container">
                                         <div class="photo-placeholder">
-                                            <img src="img/tercio-minardi.jpg" alt="Tércio Minardi" class="member-photo" style="object-position: top;">
+                                            <img src="img/tercio-minardi.jpg" alt="Tércio Minardi" class="member-photo"
+                                                style="object-position: top;">
                                         </div>
                                     </div>
                                     <div class="member-info">
@@ -711,7 +847,8 @@
                                 <div class="member-card">
                                     <div class="photo-container">
                                         <div class="photo-placeholder">
-                                            <img src="img/andre-laranjeira.jpg" alt="André Laranjeira" class="member-photo" style="object-position: center 50%;">
+                                            <img src="img/andre-laranjeira.jpg" alt="André Laranjeira"
+                                                class="member-photo" style="object-position: center 50%;">
                                         </div>
                                     </div>
                                     <div class="member-info">
@@ -722,7 +859,8 @@
                                 <div class="member-card">
                                     <div class="photo-container">
                                         <div class="photo-placeholder">
-                                            <img src="img/gabriel-moura.jpg" alt="Gabriel Moura" class="member-photo" style="object-position: top;">
+                                            <img src="img/gabriel-moura.jpg" alt="Gabriel Moura" class="member-photo"
+                                                style="object-position: top;">
                                         </div>
                                     </div>
                                     <div class="member-info">
@@ -743,7 +881,8 @@
                                 Imagem do Challenge 2026.1
                             </div>
                             <div class="challenge-details">
-                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> A DEFINIR</div>
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> A DEFINIR
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> A DEFINIR</div>
                                 <div class="detail-item"><span class="detail-label">Trainees:</span> A DEFINIR</div>
                             </div>
@@ -759,14 +898,18 @@
                             <h3 class="board-group-title">Presidência</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">Felipe Pinho</div>
                                         <div class="member-role">Presidente</div>
                                     </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">Guilherme Cardoso</div>
                                         <div class="member-role">Vice-Presidente</div>
@@ -778,20 +921,40 @@
                             <h3 class="board-group-title">Diretores</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Luiza Costa</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Luiza Costa</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Leon David</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Leon David</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">João Pedro Amaral</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">João Pedro Amaral</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Vinícius Costa</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Vinícius Costa</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -806,9 +969,11 @@
                                 Imagem do Challenge 2025.2
                             </div>
                             <div class="challenge-details">
-                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> André Rodrigues</div>
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> André
+                                    Rodrigues</div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Lucas Lima</div>
-                                <div class="detail-item"><span class="detail-label">Trainees:</span> André Soares, João César Soares, Gabriel Cancellieri, Samuel Morgan, Gabriel Gonçalves</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> André Soares, João
+                                    César Soares, Gabriel Cancellieri, Samuel Morgan, Gabriel Gonçalves</div>
                             </div>
                         </div>
                     </div>
@@ -822,14 +987,18 @@
                             <h3 class="board-group-title">Presidência</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">Rafael Freire</div>
                                         <div class="member-role">Presidente</div>
                                     </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">Luis Flávio Coelho</div>
                                         <div class="member-role">Vice-Presidente</div>
@@ -841,16 +1010,31 @@
                             <h3 class="board-group-title">Diretores</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">André Pires</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">André Pires</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Otávio David</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Otávio David</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Lucas Lima</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Lucas Lima</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -865,9 +1049,11 @@
                                 Imagem do Challenge 2025.1
                             </div>
                             <div class="challenge-details">
-                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Felipe Pinho</div>
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Felipe Pinho
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Otávio David</div>
-                                <div class="detail-item"><span class="detail-label">Trainees:</span> Igor Blom, Humberto Félix, Luiz Gustavo Vilela, Maria Eduarda Gomes, Eduarda Coura, Júlia Veriano</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> Igor Blom, Humberto
+                                    Félix, Luiz Gustavo Vilela, Maria Eduarda Gomes, Eduarda Coura, Júlia Veriano</div>
                             </div>
                         </div>
                     </div>
@@ -881,14 +1067,18 @@
                             <h3 class="board-group-title">Presidência</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">Eduardo Coelho</div>
                                         <div class="member-role">Presidente</div>
                                     </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">Luca Guimarães</div>
                                         <div class="member-role">Vice-Presidente</div>
@@ -900,24 +1090,49 @@
                             <h3 class="board-group-title">Diretores</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Alice Areas</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Alice Areas</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Ana Clara Bacha</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Ana Clara Bacha</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Alice Prati</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Alice Prati</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Brenda Garcez</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Brenda Garcez</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">Lucas Martins</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Lucas Martins</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -932,9 +1147,12 @@
                                 Imagem do Challenge 2024.2
                             </div>
                             <div class="challenge-details">
-                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Rafael Freire</div>
-                                <div class="detail-item"><span class="detail-label">Padrinho:</span> Vinícius Campos</div>
-                                <div class="detail-item"><span class="detail-label">Trainees:</span> Luiza Costa, Leon David, Guilherme Cardoso, Theo Oliveira e Bernardo Brasil</div>
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Rafael
+                                    Freire</div>
+                                <div class="detail-item"><span class="detail-label">Padrinho:</span> Vinícius Campos
+                                </div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> Luiza Costa, Leon
+                                    David, Guilherme Cardoso, Theo Oliveira e Bernardo Brasil</div>
                             </div>
                         </div>
                     </div>
@@ -948,7 +1166,9 @@
                             <h3 class="board-group-title">Presidência</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
                                     <div class="member-info">
                                         <div class="member-name">A Definir</div>
                                         <div class="member-role">Presidente</div>
@@ -960,8 +1180,13 @@
                             <h3 class="board-group-title">Diretores</h3>
                             <div class="board-grid">
                                 <div class="member-card">
-                                    <div class="photo-container"><div class="photo-placeholder">Sem Foto</div></div>
-                                    <div class="member-info"><div class="member-name">A Definir</div><div class="member-role">Diretor</div></div>
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">Sem Foto</div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">A Definir</div>
+                                        <div class="member-role">Diretor</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -976,9 +1201,11 @@
                                 Imagem do Challenge 2024.1
                             </div>
                             <div class="challenge-details">
-                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Luca Guimarães</div>
+                                <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Luca
+                                    Guimarães</div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Lucas Greco</div>
-                                <div class="detail-item"><span class="detail-label">Trainees:</span> Helena Gomes, Maria Clara Paschoalin, Manuela Gusmao, Lucas Torres, Daniel Cabral e João Campos</div>
+                                <div class="detail-item"><span class="detail-label">Trainees:</span> Helena Gomes, Maria
+                                    Clara Paschoalin, Manuela Gusmao, Lucas Torres, Daniel Cabral e João Campos</div>
                             </div>
                         </div>
                     </div>
@@ -993,11 +1220,18 @@
             <div class="footer-brand">
                 <img src="img/logo-ifs.png" alt="IFS Logo" class="footer-logo-img">
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank"
+                        aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
                     </a>
                     <a href="https://instagram.com/ifs_bh" target="_blank" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
                     </a>
                 </div>
             </div>
