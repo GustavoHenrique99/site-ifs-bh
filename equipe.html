@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Equipe | IFS-BH</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <style>
         /* RESET E PALETA OFICIAL IFS */
         * {
@@ -163,7 +161,6 @@
 
         .tabs-container {
             max-width: 1100px;
-            /* Reduzido de 1200px para compactar o bloco */
             margin: 0 auto;
         }
 
@@ -173,10 +170,8 @@
             flex-wrap: wrap;
             gap: 15px;
             margin-bottom: 30px;
-            /* Reduzido de 35px */
             border-bottom: 2px solid rgba(0, 29, 48, 0.1);
             padding-bottom: 8px;
-            /* Reduzido de 10px */
         }
 
         .tab-btn {
@@ -185,7 +180,6 @@
             color: #8898aa;
             font-family: 'Montserrat', sans-serif;
             font-size: 13px;
-            /* Reduzido de 14px */
             font-weight: 600;
             cursor: pointer;
             padding: 8px 16px;
@@ -207,7 +201,6 @@
             content: '';
             position: absolute;
             bottom: -10px;
-            /* Ajustado */
             left: 0;
             width: 100%;
             height: 3px;
@@ -225,25 +218,16 @@
         }
 
         @keyframes fadeInTab {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* LAYOUT PRINCIPAL: PROPORÇÃO AJUSTADA E EQUILIBRADA */
         .semester-content {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
-            /* Proporção ideal mantida */
             gap: 35px;
-            /* Reduzido de 45px */
-            align-items: center;
+            align-items: center; /* Mantido como no seu código */
         }
 
         /* COLUNA ESQUERDA: DIRETORIA */
@@ -251,19 +235,16 @@
             display: flex;
             flex-direction: column;
             gap: 25px;
-            /* Reduzido de 30px */
         }
 
         .board-group-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 15px;
-            /* Reduzido de 16px */
             font-weight: 700;
             color: #001d30;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 12px;
-            /* Reduzido de 15px */
             text-align: center;
         }
 
@@ -272,17 +253,13 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 12px;
-            /* Reduzido de 15px */
         }
 
         /* CARD DO MEMBRO - FLEXÍVEL E PROPORCIONAL */
         .member-card {
             flex: 1 1 calc(33.333% - 12px);
-            /* Ajustado para o novo gap */
             min-width: 150px;
-            /* Reduzido de 160px */
             max-width: 185px;
-            /* Reduzido de 200px */
             border-radius: 6px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -304,16 +281,12 @@
             display: flex;
             justify-content: center;
             padding-top: 18px;
-            /* Reduzido de 20px */
             padding-bottom: 8px;
-            /* Reduzido de 10px */
         }
 
         .photo-placeholder {
             width: 100px;
-            /* Reduzido de 110px */
             height: 100px;
-            /* Reduzido de 110px */
             border-radius: 50%;
             overflow: hidden;
             border: 2px solid #D4B45F;
@@ -323,7 +296,6 @@
             justify-content: center;
             color: rgba(255, 255, 255, 0.2);
             font-size: 9px;
-            /* Reduzido de 10px */
             text-transform: uppercase;
         }
 
@@ -336,13 +308,11 @@
 
         .member-info {
             padding: 8px 8px 18px;
-            /* Reduzido de 10px 8px 20px */
         }
 
         .member-name {
             font-family: 'Playfair Display', serif;
             font-size: 14px;
-            /* Reduzido de 15px */
             margin-bottom: 4px;
             font-weight: 700;
             color: #F2F4F8;
@@ -350,11 +320,30 @@
 
         .member-role {
             font-size: 9px;
-            /* Reduzido de 10px */
             font-weight: 700;
             color: #D4B45F;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* INSERÇÃO: BOTÃO LINKEDIN */
+        .linkedin-btn {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            padding-bottom: 2px;
+            border-bottom: 2px solid #D4B45F;
+            transition: 0.3s;
+            color: #F2F4F8;
+            margin-top: 8px;
+        }
+
+        .linkedin-btn:hover {
+            color: #B7891C;
+            border-color: transparent;
         }
 
         /* COLUNA DIREITA: CHALLENGE E HISTÓRICO PREMIUM */
@@ -370,9 +359,15 @@
             box-shadow: 0 15px 30px rgba(0, 29, 48, 0.08);
             border-top: 4px solid #D4B45F;
             border-bottom: 4px solid #001d30;
-            padding: 25px 25px;
-            /* Reduzido de 30px 25px */
+            padding: 30px 30px;
             position: relative;
+        }
+
+        /* CLASSE MODIFICADORA PARA OS SEMESTRES MAIORES (2025.2, 2024.2 E 2024.1) */
+        .challenge-box.tall {
+            /* Adiciona um padding extra no topo e embaixo para esticar o card suavemente */
+            padding-top: 40px;
+            padding-bottom: 40px;
         }
 
         /* CORREÇÃO DA LINHA PRETA NA DIREITA */
@@ -380,12 +375,11 @@
             content: '';
             position: absolute;
             top: 0;
-            right: 25px;
+            right: 30px; 
             width: 25px;
             height: 35px;
             background-color: rgba(212, 180, 95, 0.1);
             border-right: 2px solid #D4B45F;
-            /* <- RESTAURADO O BUG DA BORDA */
             border-left: 2px solid #D4B45F;
             border-bottom: 2px solid #D4B45F;
             border-radius: 0 0 3px 3px;
@@ -394,10 +388,8 @@
         .challenge-title {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
-            /* Reduzido de 24px */
             color: #001d30;
             margin-bottom: 12px;
-            /* Reduzido de 15px */
             line-height: 1.2;
             position: relative;
             z-index: 1;
@@ -410,7 +402,6 @@
         .challenge-subtitle {
             font-family: 'Montserrat', sans-serif;
             font-size: 10px;
-            /* Reduzido de 11px */
             font-weight: 700;
             color: #D4B45F;
             text-transform: uppercase;
@@ -419,8 +410,7 @@
 
         .challenge-photo-placeholder {
             width: 100%;
-            height: 155px;
-            /* Reduzido de 170px */
+            height: 155px; /* Altura padrão mantida */
             background-color: rgba(212, 180, 95, 0.03);
             border-radius: 5px;
             display: flex;
@@ -428,15 +418,19 @@
             justify-content: center;
             color: #B7891C;
             font-size: 11px;
-            /* Reduzido de 12px */
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 18px;
-            /* Reduzido de 20px */
+            margin-bottom: 18px; 
             border: 2px dashed #D4B45F;
             overflow: hidden;
             transition: 0.3s ease;
+        }
+
+        /* CLASSE MODIFICADORA - Aumenta a foto APENAS nos cards maiores */
+        .challenge-box.tall .challenge-photo-placeholder {
+            height: 190px;
+            margin-bottom: 22px;
         }
 
         .challenge-photo-placeholder:hover {
@@ -452,19 +446,21 @@
         .challenge-details {
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            /* Reduzido de 8px */
+            gap: 6px; /* Gap padrão mantido */
+        }
+
+        /* CLASSE MODIFICADORA - Aumenta o espaço entre os textos APENAS nos cards maiores */
+        .challenge-box.tall .challenge-details {
+            gap: 12px;
         }
 
         .detail-item {
             font-size: 12px;
-            /* Reduzido de 13px */
             color: #101622;
             font-weight: 500;
             line-height: 1.4;
             background-color: #ffffff;
-            padding: 10px 14px;
-            /* Reduzido de 12px 16px */
+            padding: 10px 14px; /* Padding padrão mantido */
             border-radius: 5px;
             border-left: 3px solid #001d30;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
@@ -482,7 +478,6 @@
             color: #D4B45F;
             text-transform: uppercase;
             font-size: 9px;
-            /* Reduzido de 10px */
             letter-spacing: 1.2px;
             display: block;
             margin-bottom: 2px;
@@ -813,6 +808,7 @@
                                     <div class="member-info">
                                         <div class="member-name">André Rodrigues</div>
                                         <div class="member-role">Presidente</div>
+                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
@@ -825,6 +821,7 @@
                                     <div class="member-info">
                                         <div class="member-name">Igor Blom</div>
                                         <div class="member-role">Vice-Presidente</div>
+                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -842,6 +839,7 @@
                                     <div class="member-info">
                                         <div class="member-name">Tércio Minardi</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
@@ -854,6 +852,7 @@
                                     <div class="member-info">
                                         <div class="member-name">André Laranjeira</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
@@ -866,6 +865,7 @@
                                     <div class="member-info">
                                         <div class="member-name">Gabriel Moura</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -878,7 +878,7 @@
                                 <span class="challenge-subtitle">A DEFINIR | EMPRESA A DEFINIR</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
-                                Imagem do Challenge 2026.1
+                                Challenge Interno de Valuation 2026.1
                             </div>
                             <div class="challenge-details">
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> A DEFINIR
@@ -899,20 +899,26 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/felipe.jpg" alt="Felipe Pinho" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Felipe Pinho</div>
                                         <div class="member-role">Presidente</div>
+                                        <a href="https://www.linkedin.com/in/felipeqmagalh%C3%A3es/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/gui.jpg" alt="Guilherme Cardoso" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Guilherme Cardoso</div>
                                         <div class="member-role">Vice-Presidente</div>
+                                        <a href="https://www.linkedin.com/in/guilhermcardoso/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -922,51 +928,62 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/luiza.jpg" alt="Luiza Costa" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Luiza Costa</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/luiza-costa-cabral/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/leon.jpg" alt="Leon David" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Leon David</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/leon-david-cruz-de-braga-b22210252/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/joao.jpg" alt="João Pedro Amaral" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">João Pedro Amaral</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-gomes-amaral/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/vinicius.jpg" alt="Vinícius Costa" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Vinícius Costa</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/vinicius-castro-b06847292/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="challenge-column">
-                        <div class="challenge-box">
-                            <h3 class="challenge-title">
+                        <div class="challenge-box tall"> <h3 class="challenge-title">
                                 Challenge Interno de Valuation
                                 <span class="challenge-subtitle">CHAMA CAPITAL | TRACK&FIELD</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
-                                Imagem do Challenge 2025.2
+                                <img src="img/Track&Field.png" alt="Challenge Interno de Valuation 2025.2">
                             </div>
                             <div class="challenge-details">
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> André
@@ -988,20 +1005,26 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/rafael.jpg" alt="Rafael Freire" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Rafael Freire</div>
                                         <div class="member-role">Presidente</div>
+                                        <a href="https://www.linkedin.com/in/rafael-torres-freire-673545305/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/luis.jpg" alt="Luis Flávio Coelho" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Luis Flávio Coelho</div>
                                         <div class="member-role">Vice-Presidente</div>
+                                        <a href="https://www.linkedin.com/in/luis-flavio-barroso-coelho-7085032b7/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -1011,29 +1034,38 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/pires.jpg" alt="André Pires" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">André Pires</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/andr%C3%A9-pires-825201271/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/otavio.jpg" alt="Otávio David" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Otávio David</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/otavio-david/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/lucaslima.jpg" alt="Lucas Lima" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Lucas Lima</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/lucas-lima-5383a5308/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -1046,7 +1078,7 @@
                                 <span class="challenge-subtitle">EAGLE CAPITAL | EMBRAER</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
-                                Imagem do Challenge 2025.1
+                                <img src="img/Embraer.png" alt="Challenge Interno de Valuation 2025.1">
                             </div>
                             <div class="challenge-details">
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Felipe Pinho
@@ -1068,20 +1100,26 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/eduardo.jpg" alt="Eduardo Coelho" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Eduardo Coelho</div>
                                         <div class="member-role">Presidente</div>
+                                        <a href="https://www.linkedin.com/in/eduardo-coelho-07276b270/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/luca.jpg" alt="Luca Guimarães" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Luca Guimarães</div>
                                         <div class="member-role">Vice-Presidente</div>
+                                        <a href="https://www.linkedin.com/in/lucaandrade/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -1091,60 +1129,74 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/aliceareas.jpg" alt="Alice Areas" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Alice Areas</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/alice-areas-de-castro-848175279/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/anaclara.jpg" alt="Ana Clara Bacha" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Ana Clara Bacha</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/ana-clara-bacha/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/aliceprati.jpg" alt="Alice Prati" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Alice Prati</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/alice-pratti-1569b5203/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/brenda.jpg" alt="Brenda Garcez" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Brenda Garcez</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/brenda-garcez/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/lucasmartins.jpg" alt="Lucas Martins" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
                                         <div class="member-name">Lucas Martins</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/lucasmartinsnogueira/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="challenge-column">
-                        <div class="challenge-box">
-                            <h3 class="challenge-title">
+                        <div class="challenge-box tall"> <h3 class="challenge-title">
                                 Challenge Interno de Valuation
                                 <span class="challenge-subtitle">VANGUARD CAPITAL | MATER DEI</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
-                                Imagem do Challenge 2024.2
+                                <img src="img/Mater Dei.png" alt="Challenge Interno de Valuation 2024.2">
                             </div>
                             <div class="challenge-details">
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Rafael
@@ -1167,11 +1219,26 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/boss.jpg" alt="Gabriel Rocha" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
-                                        <div class="member-name">A Definir</div>
+                                        <div class="member-name">Gabriel Rocha</div>
                                         <div class="member-role">Presidente</div>
+                                        <a href="https://www.linkedin.com/in/gabrielrocham/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/viniciuscampos.jpg" alt="Vinicius Campos" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Vinicius Campos</div>
+                                        <div class="member-role">Vice-Presidente</div>
+                                        <a href="https://www.linkedin.com/in/vin%C3%ADcius-de-assis-campos-1b7a88263/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -1181,24 +1248,74 @@
                             <div class="board-grid">
                                 <div class="member-card">
                                     <div class="photo-container">
-                                        <div class="photo-placeholder">Sem Foto</div>
+                                        <div class="photo-placeholder">
+                                            <img src="img/luca.jpg" alt="Luca Guimarães" class="member-photo" style="object-position: top;">
+                                        </div>
                                     </div>
                                     <div class="member-info">
-                                        <div class="member-name">A Definir</div>
+                                        <div class="member-name">Luca Andrade</div>
                                         <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/lucaandrade/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/brenda.jpg" alt="Brenda Garcez" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Brenda Garcez</div>
+                                        <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/brenda-garcez/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/aliceareas.jpg" alt="Alice Áreas" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Alice Áreas</div>
+                                        <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/alice-areas-de-castro-848175279/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/anaclara.jpg" alt="Ana Clara Bacha" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Ana Clara Bacha</div>
+                                        <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/ana-clara-bacha/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                    </div>
+                                </div>
+                                <div class="member-card">
+                                    <div class="photo-container">
+                                        <div class="photo-placeholder">
+                                            <img src="img/eduardo.jpg" alt="Eduardo Coelho" class="member-photo" style="object-position: top;">
+                                        </div>
+                                    </div>
+                                    <div class="member-info">
+                                        <div class="member-name">Eduardo Coelho</div>
+                                        <div class="member-role">Diretor</div>
+                                        <a href="https://www.linkedin.com/in/eduardo-coelho-07276b270/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="challenge-column">
-                        <div class="challenge-box">
-                            <h3 class="challenge-title">
+                        <div class="challenge-box tall"> <h3 class="challenge-title">
                                 Challenge Interno de Valuation
                                 <span class="challenge-subtitle">PEGASUS CAPITAL | MULTIPLAN</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
-                                Imagem do Challenge 2024.1
+                                <img src="img/Multiplan.png" alt="Challenge Interno de Valuation 2024.1">
                             </div>
                             <div class="challenge-details">
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Luca
