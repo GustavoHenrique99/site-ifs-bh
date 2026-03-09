@@ -227,7 +227,7 @@
             display: grid;
             grid-template-columns: 1.4fr 1fr;
             gap: 35px;
-            align-items: center; /* Mantido como no seu código */
+            align-items: center; 
         }
 
         /* COLUNA ESQUERDA: DIRETORIA */
@@ -363,9 +363,8 @@
             position: relative;
         }
 
-        /* CLASSE MODIFICADORA PARA OS SEMESTRES MAIORES (2025.2, 2024.2 E 2024.1) */
+        /* CLASSE MODIFICADORA PARA OS SEMESTRES MAIORES */
         .challenge-box.tall {
-            /* Adiciona um padding extra no topo e embaixo para esticar o card suavemente */
             padding-top: 40px;
             padding-bottom: 40px;
         }
@@ -410,7 +409,7 @@
 
         .challenge-photo-placeholder {
             width: 100%;
-            height: 155px; /* Altura padrão mantida */
+            height: 155px; 
             background-color: rgba(212, 180, 95, 0.03);
             border-radius: 5px;
             display: flex;
@@ -422,12 +421,13 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 18px; 
-            border: 2px dashed #D4B45F;
+            /* EDIÇÃO: Borda sólida bonita e sutil com sombra interna */
+            border: 1px solid rgba(212, 180, 95, 0.4); 
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             transition: 0.3s ease;
         }
 
-        /* CLASSE MODIFICADORA - Aumenta a foto APENAS nos cards maiores */
         .challenge-box.tall .challenge-photo-placeholder {
             height: 190px;
             margin-bottom: 22px;
@@ -440,16 +440,16 @@
         .challenge-photo-placeholder img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            /* EDIÇÃO: ESSENCIAL MUDAR DE CONTAIN PARA COVER PARA PREENCHER O ESPAÇO */
+            object-fit: cover; 
         }
 
         .challenge-details {
             display: flex;
             flex-direction: column;
-            gap: 6px; /* Gap padrão mantido */
+            gap: 6px; 
         }
 
-        /* CLASSE MODIFICADORA - Aumenta o espaço entre os textos APENAS nos cards maiores */
         .challenge-box.tall .challenge-details {
             gap: 12px;
         }
@@ -460,7 +460,7 @@
             font-weight: 500;
             line-height: 1.4;
             background-color: #ffffff;
-            padding: 10px 14px; /* Padding padrão mantido */
+            padding: 10px 14px; 
             border-radius: 5px;
             border-left: 3px solid #001d30;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
@@ -482,6 +482,39 @@
             display: block;
             margin-bottom: 2px;
             opacity: 0.9;
+        }
+
+        /* 🏆 DESIGN PREMIUM EXCLUSIVO PARA O CARD DO GRUPO CAMPEÃO */
+        .champion-card {
+            border-left-color: #D4B45F;
+            background: linear-gradient(to right, rgba(212, 180, 95, 0.08) 0%, #ffffff 100%);
+            margin-bottom: 5px; /* Leve respiro extra após ele */
+            position: relative;
+        }
+        
+        .champion-card .detail-label {
+            color: #B7891C;
+            font-size: 10px;
+        }
+
+        .champion-card strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #001d30;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .champion-card::after {
+            content: '🏆';
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            opacity: 0.8;
         }
 
         /* =========================================
@@ -643,7 +676,7 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 105px; /* Ajuste preciso para evitar sobreposição da logo */
+                top: 105px;
                 left: 0;
                 width: 100%;
                 background-color: #101622;
@@ -663,7 +696,7 @@
                 width: 100%;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.05);
                 margin: 0;
-                text-align: center; /* Menu centralizado e elegante no mobile */
+                text-align: center;
             }
 
             nav a:last-child {
@@ -689,7 +722,6 @@
                 padding: 8px 12px;
             }
 
-            /* Mantém os cards flexíveis e lado a lado */
             .board-grid {
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -756,7 +788,7 @@
         /* AJUSTES PARA CELULARES MENORES (SMARTPHONES) */
         @media (max-width: 480px) {
             .member-card {
-                flex: 1 1 calc(50% - 8px); /* 2 cards por linha com gap menor para caber na tela */
+                flex: 1 1 calc(50% - 8px); 
                 min-width: 130px; 
                 max-width: 180px;
             }
@@ -856,7 +888,7 @@
                                     <div class="member-info">
                                         <div class="member-name">André Rodrigues</div>
                                         <div class="member-role">Presidente</div>
-                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/andrerodriguesevangelista/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
@@ -869,7 +901,7 @@
                                     <div class="member-info">
                                         <div class="member-name">Igor Blom</div>
                                         <div class="member-role">Vice-Presidente</div>
-                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/igor-blom-a23922354/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -887,7 +919,7 @@
                                     <div class="member-info">
                                         <div class="member-name">Tércio Minardi</div>
                                         <div class="member-role">Diretor</div>
-                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/t%C3%A9rciominardipedrosa/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
@@ -900,7 +932,7 @@
                                     <div class="member-info">
                                         <div class="member-name">André Laranjeira</div>
                                         <div class="member-role">Diretor</div>
-                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/andre-laranjeira-763466310/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                                 <div class="member-card">
@@ -913,7 +945,7 @@
                                     <div class="member-info">
                                         <div class="member-name">Gabriel Moura</div>
                                         <div class="member-role">Diretor</div>
-                                        <a href="COLOQUE_O_LINKEDIN_AQUI" target="_blank" class="linkedin-btn">LinkedIn</a>
+                                        <a href="https://www.linkedin.com/in/gabriel-henrique-a34477360/" target="_blank" class="linkedin-btn">LinkedIn</a>
                                     </div>
                                 </div>
                             </div>
@@ -923,12 +955,16 @@
                         <div class="challenge-box">
                             <h3 class="challenge-title">
                                 Challenge Interno de Valuation
-                                <span class="challenge-subtitle">A DEFINIR | EMPRESA A DEFINIR</span>
+                                <span class="challenge-subtitle">EMPRESA A DEFINIR</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
-                                Challenge Interno de Valuation 2026.1
+                                Imagem do Challenge 2026.1
                             </div>
                             <div class="challenge-details">
+                                <div class="detail-item champion-card">
+                                    <span class="detail-label">★ Grupo Campeão ★</span>
+                                    <strong>A DEFINIR</strong>
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> A DEFINIR
                                 </div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> A DEFINIR</div>
@@ -1026,14 +1062,19 @@
                         </div>
                     </div>
                     <div class="challenge-column">
-                        <div class="challenge-box tall"> <h3 class="challenge-title">
+                        <div class="challenge-box tall">
+                            <h3 class="challenge-title">
                                 Challenge Interno de Valuation
-                                <span class="challenge-subtitle">CHAMA CAPITAL | TRACK&FIELD</span>
+                                <span class="challenge-subtitle">TRACK&FIELD</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
                                 <img src="img/Track&Field.png" alt="Challenge Interno de Valuation 2025.2">
                             </div>
                             <div class="challenge-details">
+                                <div class="detail-item champion-card">
+                                    <span class="detail-label">★ Grupo Campeão ★</span>
+                                    <strong>CHAMA CAPITAL</strong>
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> André
                                     Rodrigues</div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Lucas Lima</div>
@@ -1123,12 +1164,16 @@
                         <div class="challenge-box">
                             <h3 class="challenge-title">
                                 Challenge Interno de Valuation
-                                <span class="challenge-subtitle">EAGLE CAPITAL | EMBRAER</span>
+                                <span class="challenge-subtitle">EMBRAER</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
                                 <img src="img/Embraer.png" alt="Challenge Interno de Valuation 2025.1">
                             </div>
                             <div class="challenge-details">
+                                <div class="detail-item champion-card">
+                                    <span class="detail-label">★ Grupo Campeão ★</span>
+                                    <strong>EAGLE CAPITAL</strong>
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Felipe Pinho
                                 </div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Otávio David</div>
@@ -1239,14 +1284,19 @@
                         </div>
                     </div>
                     <div class="challenge-column">
-                        <div class="challenge-box tall"> <h3 class="challenge-title">
+                        <div class="challenge-box tall">
+                            <h3 class="challenge-title">
                                 Challenge Interno de Valuation
-                                <span class="challenge-subtitle">VANGUARD CAPITAL | MATER DEI</span>
+                                <span class="challenge-subtitle">MATER DEI</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
                                 <img src="img/Mater Dei.png" alt="Challenge Interno de Valuation 2024.2">
                             </div>
                             <div class="challenge-details">
+                                <div class="detail-item champion-card">
+                                    <span class="detail-label">★ Grupo Campeão ★</span>
+                                    <strong>VANGUARD CAPITAL</strong>
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Rafael
                                     Freire</div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Vinícius Campos
@@ -1358,14 +1408,19 @@
                         </div>
                     </div>
                     <div class="challenge-column">
-                        <div class="challenge-box tall"> <h3 class="challenge-title">
+                        <div class="challenge-box tall">
+                            <h3 class="challenge-title">
                                 Challenge Interno de Valuation
-                                <span class="challenge-subtitle">PEGASUS CAPITAL | MULTIPLAN</span>
+                                <span class="challenge-subtitle">MULTIPLAN</span>
                             </h3>
                             <div class="challenge-photo-placeholder">
                                 <img src="img/Multiplan.png" alt="Challenge Interno de Valuation 2024.1">
                             </div>
                             <div class="challenge-details">
+                                <div class="detail-item champion-card">
+                                    <span class="detail-label">★ Grupo Campeão ★</span>
+                                    <strong>PEGASUS CAPITAL</strong>
+                                </div>
                                 <div class="detail-item"><span class="detail-label">Analista Sênior:</span> Luca
                                     Guimarães</div>
                                 <div class="detail-item"><span class="detail-label">Padrinho:</span> Lucas Greco</div>
@@ -1430,7 +1485,7 @@
                 &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
             </div>
             <div class="developer">
-                Developed by <a href="#" class="dev-signature">Gustavo Henrique</a>
+                Desenvolvido por <a href="#" class="dev-signature">Gustavo Henrique</a>
             </div>
         </div>
     </footer>
