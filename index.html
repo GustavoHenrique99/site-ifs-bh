@@ -343,10 +343,6 @@
             transition: 0.4s ease;
         }
 
-        .butia-logo img {
-            transform: scale(1.6);
-        }
-
         /* O HOVER AGORA APENAS DEIXA O BRANCO MAIS FORTE (opacity 1) SEM MUDAR A COR */
         .partner-box:hover img {
             opacity: 1;
@@ -360,25 +356,25 @@
 
         /* Ajuste para logos que precisam de destaque máximo */
         .partner-box.extra-large img {
-            transform: scale(1.7);
+            transform: scale(1.8);
+            /* Aumenta em 50% */
+        }
+
+        .partner-box.extrax-large img {
+            transform: scale(2.0);
             /* Aumenta em 50% */
         }
 
         /* Mantém o efeito de hover funcionando proporcionalmente */
         .partner-box.large:hover img {
-            transform: scale(1.4);
+            transform: scale(1.5);
         }
 
         .partner-box.extra-large:hover img {
-            transform: scale(1.6);
-        }
+            transform: scale(1.8);
 
-        .butia-logo:hover img {
-            transform: scale(1.7);
-        }
-
-        .partner-box:not(.butia-logo):hover img {
-            transform: scale(1.08);
+        }.partner-box.extrax-large:hover img {
+            transform: scale(2.0);
         }
 
         /* =========================================
@@ -705,10 +701,6 @@
                 height: 60px;
             }
 
-            .butia-logo img {
-                transform: scale(1.3);
-            }
-
             /* Ajustes do Footer no Mobile */
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -826,7 +818,7 @@
     <section class="section-darker">
         <h2 class="section-title title-gold" style="margin-bottom: 70px;">Onde estão nossos membros</h2>
         <div class="partners-grid">
-            <div class="partner-box butia-logo">
+            <div class="partner-box extra-large">
                 <img src="img/parceiro1.png" alt="Butiá Investimentos">
             </div>
             <div class="partner-box">
@@ -838,16 +830,16 @@
             <div class="partner-box">
                 <img src="img/parceiro4.png" alt="Araújo Fontes">
             </div>
-            <div class="partner-box">
+            <div class="partner-box large">
                 <img src="img/parceiro5.png" alt="Impacto Assessoria Estratégica">
             </div>
             <div class="partner-box">
                 <img src="img/parceiro6.png" alt="Imeri Capital">
             </div>
-            <div class="partner-box large">
+            <div class="partner-box extra-large">
                 <img src="img/citibank.png" alt="Citibank">
             </div>
-            <div class="partner-box">
+            <div class="partner-box large">
                 <img src="img/santander.png" alt="Santander">
             </div>
             <div class="partner-box">
@@ -859,7 +851,7 @@
             <div class="partner-box">
                 <img src="img/sunoasset.png" alt="Suno Asset">
             </div>
-            <div class="partner-box">
+            <div class="partner-box large">
                 <img src="img/v.png" alt="V">
             </div>
             <div class="partner-box">
@@ -868,14 +860,11 @@
             <div class="partner-box">
                 <img src="img/xp.png" alt="XP Investimentos">
             </div>
-            <div class="partner-box extra-large">
+            <div class="partner-box extrax-large">
                 <img src="img/inter.png" alt="Banco Inter">
             </div>
-            <div class="partner-box">
+            <div class="partner-box large">
                 <img src="img/btg.png" alt="BTG Pactual">
-            </div>
-            <div class="partner-box">
-                <img src="img/im.png" alt="Parceiro">
             </div>
             <div class="partner-box">
                 <img src="img/brasilhorizonte.png" alt="Parceiro">
