@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Competições | IFS-BH</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <style>
         /* RESET E PALETA OFICIAL IFS */
         * {
@@ -49,7 +51,7 @@
             width: auto;
             filter: brightness(0) invert(1);
             transition: 0.3s;
-            margin-left: -5px; 
+            margin-left: -5px;
         }
 
         nav {
@@ -87,14 +89,14 @@
 
         /* SEÇÃO HERO (VÍDEO) COM FALLBACK ESTILO FGV */
         .hero {
-            position: relative; 
-            width: 100vw; 
+            position: relative;
+            width: 100vw;
             height: 100vh;
-            display: flex; 
-            align-items: center; 
+            display: flex;
+            align-items: center;
             justify-content: center;
-            flex-direction: column; 
-            text-align: center; 
+            flex-direction: column;
+            text-align: center;
             overflow: hidden;
             background-image: url('img/background-video.jpg');
             background-size: cover;
@@ -102,31 +104,31 @@
         }
 
         .hero-video {
-            position: absolute; 
-            top: 50%; 
+            position: absolute;
+            top: 50%;
             left: 50%;
-            min-width: 100%; 
+            min-width: 100%;
             min-height: 100%;
-            transform: translate(-50%, -50%); 
-            z-index: 1; 
+            transform: translate(-50%, -50%);
+            z-index: 1;
             object-fit: cover;
         }
 
         .hero-overlay {
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
             background: linear-gradient(to bottom, rgba(10, 14, 23, 0.75) 0%, rgba(10, 14, 23, 0.95) 100%);
             z-index: 2;
         }
 
         .hero-content {
-            position: relative; 
+            position: relative;
             z-index: 3;
-            display: flex; 
-            flex-direction: column; 
+            display: flex;
+            flex-direction: column;
             align-items: center;
             animation: fadeIn 1.5s ease-out forwards;
         }
@@ -134,40 +136,47 @@
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(40px, 5.5vw, 75px);
-            font-weight: 600; 
-            letter-spacing: 1px; 
+            font-weight: 600;
+            letter-spacing: 1px;
             margin-bottom: 5px;
-            color: #F2F4F8; 
+            color: #F2F4F8;
             line-height: 1.2;
         }
 
         .hero-content p {
             font-size: clamp(12px, 1.8vw, 16px);
-            color: #D4B45F; 
+            color: #D4B45F;
             font-weight: 500;
-            letter-spacing: 4px; 
-            text-transform: uppercase; 
-            margin-top: 15px; 
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 15px;
             margin-bottom: 0;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* =========================================
            INTRODUÇÃO CLARA (CENTRALIZADA E CLÁSSICA)
            ========================================= */
         .intro-classic-section {
-            background-color: #F8FAFC; 
+            background-color: #F8FAFC;
             padding: 100px 8%;
             text-align: center;
             border-bottom: 1px solid rgba(212, 180, 95, 0.3);
         }
 
         .intro-classic-container {
-            max-width: 850px; 
+            max-width: 850px;
             margin: 0 auto;
         }
 
@@ -179,7 +188,7 @@
             margin-bottom: 25px;
             font-weight: 700;
             position: relative;
-            display: inline-block; 
+            display: inline-block;
         }
 
         .intro-classic-title::after {
@@ -198,7 +207,7 @@
             font-size: 17px;
             color: #444;
             line-height: 1.8;
-            margin-top: 40px; 
+            margin-top: 40px;
             margin-bottom: 20px;
             font-weight: 400;
         }
@@ -211,15 +220,28 @@
            LAYOUT ZIGZAG PARA AS COMPETIÇÕES
            ========================================= */
         .zigzag-section {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 100px 8%; gap: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 8%;
+            gap: 60px;
         }
 
-        .zigzag-section.dark { background-color: #101622; color: #F2F4F8; }
-        .zigzag-section.light { background-color: #F2F4F8; color: #1a1e22; }
+        .zigzag-section.dark {
+            background-color: #101622;
+            color: #F2F4F8;
+        }
 
-        .zigzag-content { flex: 1; max-width: 600px; }
-        
+        .zigzag-section.light {
+            background-color: #F2F4F8;
+            color: #1a1e22;
+        }
+
+        .zigzag-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
         .award-badge {
             display: inline-block;
             font-size: 12px;
@@ -235,18 +257,31 @@
         .zigzag-content h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(30px, 3.5vw, 40px);
-            margin-bottom: 25px; line-height: 1.2;
+            margin-bottom: 25px;
+            line-height: 1.2;
         }
 
-        .dark .zigzag-content h2 { color: #F2F4F8; }
-        .light .zigzag-content h2 { color: #001d30; }
+        .dark .zigzag-content h2 {
+            color: #F2F4F8;
+        }
+
+        .light .zigzag-content h2 {
+            color: #001d30;
+        }
 
         .zigzag-content p {
-            font-size: 15px; line-height: 1.8; margin-bottom: 25px;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
 
-        .dark .zigzag-content p { color: #adcbd6; }
-        .light .zigzag-content p { color: #444; }
+        .dark .zigzag-content p {
+            color: #adcbd6;
+        }
+
+        .light .zigzag-content p {
+            color: #444;
+        }
 
         .team-members {
             font-size: 13px;
@@ -256,8 +291,13 @@
             border-top: 1px solid rgba(212, 180, 95, 0.3);
         }
 
-        .dark .team-members { color: #F2F4F8; }
-        .light .team-members { color: #101622; }
+        .dark .team-members {
+            color: #F2F4F8;
+        }
+
+        .light .team-members {
+            color: #101622;
+        }
 
         .team-members span {
             color: #D4B45F;
@@ -269,10 +309,13 @@
         }
 
         .zigzag-image {
-            flex: 1; height: 400px; border-radius: 4px;
-            position: relative; overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            background-color: #1a1e22; 
+            flex: 1;
+            height: 400px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            background-color: #1a1e22;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -281,15 +324,17 @@
         .zigzag-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
         .zigzag-image:hover img {
-            transform: scale(1.05); 
+            transform: scale(1.05);
         }
 
-        .zigzag-section.light { flex-direction: row-reverse; }
+        .zigzag-section.light {
+            flex-direction: row-reverse;
+        }
 
         /* =========================================
            RODAPÉ PREMIUM DEFINITIVO
@@ -324,77 +369,208 @@
             filter: brightness(0) invert(1);
         }
 
-        .footer-socials { display: flex; gap: 15px; margin-top: 5px; }
-
-        .footer-socials a {
-            color: #F2F4F8; transition: 0.3s ease; display: flex; align-items: center; justify-content: center;
-            width: 42px; height: 42px; background-color: rgba(255, 255, 255, 0.05); border-radius: 50%;
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
         }
 
-        .footer-socials a:hover { background-color: #D4B45F; color: #101622; transform: translateY(-3px); }
+        .footer-socials a {
+            color: #F2F4F8;
+            transition: 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
 
-        .footer-socials svg { width: 20px; height: 20px; }
+        .footer-socials a:hover {
+            background-color: #D4B45F;
+            color: #101622;
+            transform: translateY(-3px);
+        }
+
+        .footer-socials svg {
+            width: 20px;
+            height: 20px;
+        }
 
         .footer-column h4 {
-            font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #F2F4F8;
-            text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #F2F4F8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            position: relative;
         }
 
         .footer-column h4::after {
-            content: ''; position: absolute; bottom: -10px; left: 0; width: 30px; height: 2px; background-color: #D4B45F;
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #D4B45F;
         }
 
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 12px; }
-        .footer-column ul li a, .footer-column p, .footer-column a.email-link {
-            color: #adcbd6; text-decoration: none; font-size: 15px; transition: 0.3s; line-height: 1.6; text-align: left;
+        .footer-column ul {
+            list-style: none;
         }
 
-        .footer-column a.email-link:hover, .footer-column ul li a:hover { color: #D4B45F; }
-        .footer-column ul li a:hover { padding-left: 6px; }
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column p,
+        .footer-column a.email-link {
+            color: #adcbd6;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .footer-column a.email-link:hover,
+        .footer-column ul li a:hover {
+            color: #D4B45F;
+        }
+
+        .footer-column ul li a:hover {
+            padding-left: 6px;
+        }
 
         .footer-bottom {
-            display: flex; justify-content: space-between; align-items: center; max-width: 1200px;
-            margin: 0 auto; padding-top: 25px; font-size: 13px; color: #566b8e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 25px;
+            font-size: 13px;
+            color: #566b8e;
         }
 
         .dev-signature {
-            color: #566b8e; text-decoration: none; font-weight: 600; transition: 0.3s;
+            color: #566b8e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
         }
-        .dev-signature:hover { color: #D4B45F; }
+
+        .dev-signature:hover {
+            color: #D4B45F;
+        }
 
         /* =========================================
            AJUSTES GLOBAIS E MOBILE - INSERÇÃO CIRÚRGICA
            ========================================= */
         @media (max-width: 900px) {
-            header { background: #101622; padding: 15px 5%; }
-            
-            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
-            .menu-icon { display: block; }
-            nav {
-                display: none; position: absolute; top: 100px; left: 0; width: 100%;
-                background-color: #101622; flex-direction: column; gap: 0;
-                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            header {
+                background: #101622;
+                padding: 15px 5%;
             }
-            .menu-toggle:checked ~ nav { display: flex; }
-            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            nav a:last-child { border-bottom: none; }
-            
-            .intro-classic-section { padding: 80px 5%; }
-            
+
+            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #101622;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                border-bottom: 2px solid #D4B45F;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu-toggle:checked~nav {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 5%;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .intro-classic-section {
+                padding: 80px 5%;
+            }
+
             /* Ajuste do Zigue-Zague para Celular */
-            .zigzag-section { flex-direction: column !important; padding: 80px 5%; gap: 40px; }
-            .zigzag-content { text-align: center; }
-            .zigzag-image { width: 100%; height: 300px; min-height: auto; } /* Altura controlada no mobile */
-            .zigzag-image img { border-radius: 8px; object-fit: cover; }
-            
+            .zigzag-section {
+                flex-direction: column !important;
+                padding: 80px 5%;
+                gap: 40px;
+            }
+
+            .zigzag-content {
+                text-align: center;
+            }
+
+            .zigzag-image {
+                width: 100%;
+                height: 300px;
+                min-height: auto;
+            }
+
+            /* Altura controlada no mobile */
+            .zigzag-image img {
+                border-radius: 8px;
+                object-fit: cover;
+            }
+
             /* Ajuste do Footer para Celular */
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
-            .footer-brand { align-items: center; width: 100%; }
-            .footer-socials { justify-content: center; width: 100%; }
-            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .footer-brand {
+                align-items: center;
+                width: 100%;
+            }
+
+            .footer-socials {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a,
+            .footer-column p,
+            .footer-column a.email-link {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -402,10 +578,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="header-logo">
+        <a href="/" class="header-logo">
             <img src="img/logo-ifs.png" alt="IFS Logo">
         </a>
-        
+
         <input type="checkbox" id="menu-check" class="menu-toggle">
         <label for="menu-check" class="menu-icon">&#9776;</label>
 
@@ -434,8 +610,13 @@
     <section class="intro-classic-section">
         <div class="intro-classic-container">
             <h2 class="intro-classic-title">O Time Acadêmico</h2>
-            <p class="intro-classic-text">Com o objetivo de aproximar os membros da realidade do mercado financeiro, grandes instituições promovem desafios técnicos focados em Valuation e M&A. Nestas competições, os grupos formulam teses de investimento complexas, vivenciando na prática o rigor e a pressão de um profissional do setor.</p>
-            <p class="intro-classic-text">O Time Acadêmico da IFS-BH foi estruturado para representar o Ibmec nesses desafios. Com muito trabalho e dedicação, consolidamos um histórico de conquistas expressivas nas bancas mais renomadas do país.</p>
+            <p class="intro-classic-text">Com o objetivo de aproximar os membros da realidade do mercado financeiro,
+                grandes instituições promovem desafios técnicos focados em Valuation e M&A. Nestas competições, os
+                grupos formulam teses de investimento complexas, vivenciando na prática o rigor e a pressão de um
+                profissional do setor.</p>
+            <p class="intro-classic-text">O Time Acadêmico da IFS-BH foi estruturado para representar o Ibmec nesses
+                desafios. Com muito trabalho e dedicação, consolidamos um histórico de conquistas expressivas nas bancas
+                mais renomadas do país.</p>
         </div>
     </section>
 
@@ -443,7 +624,10 @@
         <div class="zigzag-content">
             <div class="award-badge">Finalistas - 2026</div>
             <h2>Challenge de M&A da FinQ</h2>
-            <p>Representando a IFS-BH em São Paulo, a equipe foi finalista superando a concorrência de 51 grupos e mais de 130 alunos de 25 universidades. O desafio exigiu a elaboração e apresentação de um Pitch de M&A da Ânima Educação, sendo avaliado diretamente pela diretoria de M&A da própria companhia na sede da Galapagos Capital.</p>
+            <p>Representando a IFS-BH em São Paulo, a equipe foi finalista superando a concorrência de 51 grupos e mais
+                de 130 alunos de 25 universidades. O desafio exigiu a elaboração e apresentação de um Pitch de M&A da
+                Ânima Educação, sendo avaliado diretamente pela diretoria de M&A da própria companhia na sede da
+                Galapagos Capital.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Guilherme Cardoso, Igor Blom e Tércio Minardi.
@@ -458,7 +642,11 @@
         <div class="zigzag-content">
             <div class="award-badge">Vice-Campeões - 2025</div>
             <h2>AF Challenge</h2>
-            <p>Conquistamos o segundo lugar no Challenge de M&A promovido pela Araújo Fontes. O grupo desenvolveu uma tese estratégica de consolidação setorial, na qual propusemos a aquisição da Farmácias Nissei pela RD Saúde. O projeto consistiu em um case imersivo de Corporate Finance, aplicando metodologias avançadas de valuation e estruturação de capital, evidenciando o alto nível de preparo técnico exigido pela nossa formação.</p>
+            <p>Conquistamos o segundo lugar no Challenge de M&A promovido pela Araújo Fontes. O grupo desenvolveu uma
+                tese estratégica de consolidação setorial, na qual propusemos a aquisição da Farmácias Nissei pela RD
+                Saúde. O projeto consistiu em um case imersivo de Corporate Finance, aplicando metodologias avançadas de
+                valuation e estruturação de capital, evidenciando o alto nível de preparo técnico exigido pela nossa
+                formação.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Guilherme Cardoso, Felipe Pinho, João Amaral e Luiza Costa.
@@ -473,7 +661,10 @@
         <div class="zigzag-content">
             <div class="award-badge">3º Lugar - 2025</div>
             <h2>Desafio Quant AI - Itaú Asset</h2>
-            <p>Competindo com mais de 2.500 participantes de todo o Brasil, a nossa equipe conquistou o pódio com o modelo "Janus IA". A tese focou em arbitragem market neutral entre ações e BDRs/ADRs utilizando cointegração, HMM e NLP. A defesa ocorreu na sede do Itaú, na Faria Lima, avaliada por gestores da Asset.</p>
+            <p>Competindo com mais de 2.500 participantes de todo o Brasil, a nossa equipe conquistou o pódio com o
+                modelo "Janus IA". A tese focou em arbitragem market neutral entre ações e BDRs/ADRs utilizando
+                cointegração, HMM e NLP. A defesa ocorreu na sede do Itaú, na Faria Lima, avaliada por gestores da
+                Asset.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Emanuel Gandra, Otavio David e Tulio Castro.
@@ -488,7 +679,9 @@
         <div class="zigzag-content">
             <div class="award-badge">Campeões - 2025</div>
             <h2>Desafio Valuation VAROS</h2>
-            <p>A equipe da IFS-BH sagrou-se campeã superando mais de 140 inscritos no desafio nacional. O projeto exigiu uma análise fundamentalista profunda e modelagem financeira complexa de uma empresa listada, atestando a nossa capacidade de avaliação e defesa de tese sob escrutínio de profissionais do mercado.</p>
+            <p>A equipe da IFS-BH sagrou-se campeã superando mais de 140 inscritos no desafio nacional. O projeto exigiu
+                uma análise fundamentalista profunda e modelagem financeira complexa de uma empresa listada, atestando a
+                nossa capacidade de avaliação e defesa de tese sob escrutínio de profissionais do mercado.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Felipe Magalhães, Guilherme Cardoso e João Pedro Amaral.
@@ -503,7 +696,10 @@
         <div class="zigzag-content">
             <div class="award-badge">Finalistas - 2025</div>
             <h2>FinQ Challenge 2025</h2>
-            <p>O grupo destacou-se na estruturação de soluções financeiras e análise de viabilidade estratégica, garantindo uma posição na reta final de uma das competições mais exigentes da atualidade. O desempenho reafirma a consistência da liga na entrega de estudos bem fundamentados em cenários de alta competitividade.</p>
+            <p>O grupo destacou-se na estruturação de soluções financeiras e análise de viabilidade estratégica,
+                garantindo uma posição na reta final de uma das competições mais exigentes da atualidade. O desempenho
+                reafirma a consistência da liga na entrega de estudos bem fundamentados em cenários de alta
+                competitividade.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Leon David, Rafael Freire e Vinícius de Castro.
@@ -518,7 +714,11 @@
         <div class="zigzag-content">
             <div class="award-badge">1º Lugar - 2024</div>
             <h2>AF Challenge (Araújo Fontes)</h2>
-            <p>Conquistamos o primeiro lugar no Challenge de M&A promovido pela Araújo Fontes. O grupo desenvolveu uma tese estratégica de consolidação setorial, na qual propusemos a aquisição da Nordestão pelo Grupo Mateus. O projeto consistiu em um case imersivo de Corporate Finance, aplicando metodologias avançadas de valuation e estruturação de capital, evidenciando o alto nível de preparo técnico exigido pela nossa formação.</p>
+            <p>Conquistamos o primeiro lugar no Challenge de M&A promovido pela Araújo Fontes. O grupo desenvolveu uma
+                tese estratégica de consolidação setorial, na qual propusemos a aquisição da Nordestão pelo Grupo
+                Mateus. O projeto consistiu em um case imersivo de Corporate Finance, aplicando metodologias avançadas
+                de valuation e estruturação de capital, evidenciando o alto nível de preparo técnico exigido pela nossa
+                formação.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Eduardo Coelho, Helena Gomes, Luca Andrade e Lucas Greco.
@@ -533,7 +733,9 @@
         <div class="zigzag-content">
             <div class="award-badge">3º Lugar - 2024</div>
             <h2>Prêmio Turim 2024</h2>
-            <p>Em um dos desafios mais tradicionais do mercado de Wealth Management e Multi-Family Office no Brasil, os nossos membros demonstraram exímia capacidade analítica na estruturação de portfólios e gestão de risco, garantindo o pódio para o Ibmec pelo segundo ano alternado na competição.</p>
+            <p>Em um dos desafios mais tradicionais do mercado de Wealth Management e Multi-Family Office no Brasil, os
+                nossos membros demonstraram exímia capacidade analítica na estruturação de portfólios e gestão de risco,
+                garantindo o pódio para o Ibmec pelo segundo ano alternado na competição.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Caio Garcia e Vinicius Campos.
@@ -548,7 +750,11 @@
         <div class="zigzag-content">
             <div class="award-badge">Vice-Campeões - 2023</div>
             <h2>Itaú Asset Quantamental Challenge</h2>
-            <p>Nossos membros conquistaram o segundo lugar na final do Desafio Itaú Quantamental 2023, competindo com mais de 400 equipes e 1.200 participantes, representando 137 universidades. Para o desafio, foi desenvolvido o robô IAM-Tlaloc, um modelo que combina fatores comportamentais humanos com dados de precipitação pluviométrica em grandes centros financeiros, buscando gerar retornos otimizados em relação ao risco para o investidor.</p>
+            <p>Nossos membros conquistaram o segundo lugar na final do Desafio Itaú Quantamental 2023, competindo com
+                mais de 400 equipes e 1.200 participantes, representando 137 universidades. Para o desafio, foi
+                desenvolvido o robô IAM-Tlaloc, um modelo que combina fatores comportamentais humanos com dados de
+                precipitação pluviométrica em grandes centros financeiros, buscando gerar retornos otimizados em relação
+                ao risco para o investidor.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Valdívio Netto, Rafael Mascarenhas, Lucas Greco e Gabriel Fonseca.
@@ -563,7 +769,9 @@
         <div class="zigzag-content">
             <div class="award-badge">3º Lugar - 2023</div>
             <h2>Desafio Geo Capital</h2>
-            <p>Focados em investimentos globais, a equipe formulou uma tese de investmento internacional rigorosa. O case exigiu forte análise macroeconômica, compreensão das dinâmicas globais de mercado e stock picking refinado, resultando em mais uma posição de destaque no cenário nacional.</p>
+            <p>Focados em investimentos globais, a equipe formulou uma tese de investmento internacional rigorosa. O
+                case exigiu forte análise macroeconômica, compreensão das dinâmicas globais de mercado e stock picking
+                refinado, resultando em mais uma posição de destaque no cenário nacional.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Fabricio Merlo, Rafael Botelho e Vinícius Campos.
@@ -578,7 +786,9 @@
         <div class="zigzag-content">
             <div class="award-badge">2º Lugar - 2022</div>
             <h2>Prêmio Turim 2022</h2>
-            <p>Nossa equipe consolidou o nome da IFS-BH na vice-liderança do desafio, elaborando e apresentando estratégias de preservação de capital e rentabilidade de longo prazo alinhadas aos mais elevados padrões de excelência exigidos pela Turim MFO.</p>
+            <p>Nossa equipe consolidou o nome da IFS-BH na vice-liderança do desafio, elaborando e apresentando
+                estratégias de preservação de capital e rentabilidade de longo prazo alinhadas aos mais elevados padrões
+                de excelência exigidos pela Turim MFO.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Gustavo Chula e Valdívio Netto.
@@ -593,7 +803,9 @@
         <div class="zigzag-content">
             <div class="award-badge">1º Lugar - 2022</div>
             <h2>Itaú BBA Challenge</h2>
-            <p>O time acadêmico sagrou-se campeão da 1ª edição do desafio organizado pelo maior banco corporativo e de investimentos da América Latina. O resultado reafirma o domínio técnico dos nossos membros em modelagem e estruturação de operações financeiras desde o início do nosso legado.</p>
+            <p>O time acadêmico sagrou-se campeão da 1ª edição do desafio organizado pelo maior banco corporativo e de
+                investimentos da América Latina. O resultado reafirma o domínio técnico dos nossos membros em modelagem
+                e estruturação de operações financeiras desde o início do nosso legado.</p>
             <div class="team-members">
                 <span>Time Acadêmico</span>
                 Arthur Vecchio, Isabella Amaral, Izabella Albojian e Valdívio Netto.
@@ -609,14 +821,17 @@
             <div class="footer-brand">
                 <img src="img/logo-ifs.png" alt="IFS Logo" class="footer-logo-img">
                 <div class="footer-socials">
-                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank"
+                        aria-label="LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
                     <a href="https://instagram.com/ifs_bh" target="_blank" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.727-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 1.728 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.728 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-1.728-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
                 </div>
@@ -666,4 +881,5 @@
         });
     </script>
 </body>
+
 </html>
