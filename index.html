@@ -340,7 +340,8 @@
             height: auto;
             /* FORÇA TODAS AS LOGOS A FICAREM BRANCAS */
             filter: brightness(0) invert(1);
-            opacity: 0.85; /* Deixa um branco levemente mais suave */
+            opacity: 0.85;
+            /* Deixa um branco levemente mais suave */
             transition: 0.4s ease;
         }
 
@@ -374,7 +375,9 @@
         .partner-box.extra-large:hover img {
             transform: scale(1.8);
 
-        }.partner-box.extrax-large:hover img {
+        }
+
+        .partner-box.extrax-large:hover img {
             transform: scale(2.0);
         }
 
@@ -743,8 +746,8 @@
 
     <header>
         <a href="/" class="header-logo">
-    <img src="img/logo-ifs.png" alt="IFS Logo">
-</a>
+            <img src="img/logo-ifs.png" alt="IFS Logo">
+        </a>
 
         <input type="checkbox" id="menu-check" class="menu-toggle">
         <label for="menu-check" class="menu-icon">&#9776;</label>
@@ -956,8 +959,17 @@
                 &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
             </div>
             <div class="developer">
-                Developed by <a href="https://www.linkedin.com/in/gustavo-henrique-cefet/" target="_blank" class="dev-signature">Gustavo
-                    Henrique</a>
+                Developed by
+                <a href="https://www.linkedin.com/in/gustavo-henrique-cefet/" target="_blank" class="dev-signature"
+                    style="display: inline-flex; align-items: center; gap: 5px;">
+                    Gustavo Henrique
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
             </div>
         </div>
     </footer>
