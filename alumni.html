@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni | IFS-BH</title>
     <link rel="icon" type="image/png" href="img/logo-ifs.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
     <style>
         /* RESET E PALETA OFICIAL IFS */
         * {
@@ -155,8 +157,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* =========================================
@@ -182,7 +191,7 @@
             margin-bottom: 25px;
             font-weight: 700;
             position: relative;
-            display: inline-block; 
+            display: inline-block;
         }
 
         .intro-classic-title::after {
@@ -267,7 +276,7 @@
             margin-bottom: 6px;
             transition: color 0.3s ease;
         }
-        
+
         .alumni-item:hover .alumni-name {
             color: #D4B45F;
         }
@@ -341,14 +350,29 @@
             gap: 20px;
         }
 
-        .footer-socials { display: flex; gap: 15px; margin-top: 5px; }
-
-        .footer-socials a {
-            color: #F2F4F8; transition: 0.3s; display: flex; align-items: center; justify-content: center;
-            width: 42px; height: 42px; background-color: rgba(255, 255, 255, 0.05); border-radius: 50%;
+        .footer-socials {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
         }
 
-        .footer-socials a:hover { background-color: #D4B45F; color: #101622; transform: translateY(-3px); }
+        .footer-socials a {
+            color: #F2F4F8;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .footer-socials a:hover {
+            background-color: #D4B45F;
+            color: #101622;
+            transform: translateY(-3px);
+        }
 
         .footer-socials svg {
             width: 20px;
@@ -356,19 +380,46 @@
         }
 
         .footer-column h4 {
-            font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 700; color: #F2F4F8;
-            text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 25px; position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #F2F4F8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            position: relative;
         }
 
-        .footer-column h4::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 30px; height: 2px; background-color: #D4B45F; }
-
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 12px; }
-        .footer-column ul li a, .footer-column p, .footer-column a.email-link {
-            color: #adcbd6; text-decoration: none; font-size: 15px; transition: 0.3s; line-height: 1.6;
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #D4B45F;
         }
 
-        .footer-column a.email-link:hover, .footer-column ul li a:hover {
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a,
+        .footer-column p,
+        .footer-column a.email-link {
+            color: #adcbd6;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+            line-height: 1.6;
+        }
+
+        .footer-column a.email-link:hover,
+        .footer-column ul li a:hover {
             color: #D4B45F;
         }
 
@@ -377,8 +428,14 @@
         }
 
         .footer-bottom {
-            display: flex; justify-content: space-between; align-items: center; max-width: 1200px;
-            margin: 0 auto; padding-top: 25px; font-size: 13px; color: #566b8e;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 25px;
+            font-size: 13px;
+            color: #566b8e;
         }
 
         .dev-signature {
@@ -396,35 +453,106 @@
            AJUSTES GLOBAIS E MOBILE - INSERÇÃO CIRÚRGICA
            ========================================= */
         @media (max-width: 900px) {
-            header { background: #101622; padding: 15px 5%; }
-            
-            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
-            .menu-icon { display: block; }
-            nav {
-                display: none; position: absolute; top: 100px; left: 0; width: 100%;
-                background-color: #101622; flex-direction: column; gap: 0;
-                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            header {
+                background: #101622;
+                padding: 15px 5%;
             }
-            .menu-toggle:checked ~ nav { display: flex; }
-            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            nav a:last-child { border-bottom: none; }
 
-            .intro-classic-section { padding: 80px 5%; }
-            .alumni-list-section { padding: 80px 5%; }
-            
+            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #101622;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                border-bottom: 2px solid #D4B45F;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu-toggle:checked~nav {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 5%;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .intro-classic-section {
+                padding: 80px 5%;
+            }
+
+            .alumni-list-section {
+                padding: 80px 5%;
+            }
+
             /* Ajuste da Grid de Alumni para Mobile */
-            .alumni-list-grid { grid-template-columns: 1fr; text-align: center; }
-            .section-title-gold { text-align: center; }
-            .section-title-gold::after { left: 50%; transform: translateX(-50%); }
-            .alumni-item:hover { transform: none; }
-            
+            .alumni-list-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .section-title-gold {
+                text-align: center;
+            }
+
+            .section-title-gold::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .alumni-item:hover {
+                transform: none;
+            }
+
             /* Ajustes do Footer no Mobile */
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
-            .footer-brand { align-items: center; width: 100%; } /* Ajuste de centralização */
-            .footer-socials { justify-content: center; width: 100%; } /* Centraliza ícones */
-            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .footer-brand {
+                align-items: center;
+                width: 100%;
+            }
+
+            /* Ajuste de centralização */
+            .footer-socials {
+                justify-content: center;
+                width: 100%;
+            }
+
+            /* Centraliza ícones */
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a,
+            .footer-column p,
+            .footer-column a.email-link {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -464,8 +592,10 @@
     <section class="intro-classic-section">
         <div class="intro-classic-container">
             <h2 class="intro-classic-title">A Comunidade Alumni</h2>
-            <p class="intro-classic-text">Nossos ex-membros estão nas melhores instituições financeiras do mercado e formam uma rede de networking ativa e de alto nível.</p>
-            <p class="intro-classic-text">Essa proximidade garante que o padrão de excelência da liga evolua a cada semestre através de mentoria estratégica e feedbacks práticos constantes.</p>
+            <p class="intro-classic-text">Nossos ex-membros estão nas melhores instituições financeiras do mercado e
+                formam uma rede de networking ativa e de alto nível.</p>
+            <p class="intro-classic-text">Essa proximidade garante que o padrão de excelência da liga evolua a cada
+                semestre através de mentoria estratégica e feedbacks práticos constantes.</p>
         </div>
     </section>
 
@@ -477,7 +607,8 @@
                 <div class="alumni-name">Valdívio Netto, CGA, CFA</div>
                 <span class="alumni-company">Itaú Asset</span>
                 <div class="alumni-role">Portfolio Manager</div>
-                <a href="https://www.linkedin.com/in/valdivio-netto-cga-0229a61b2/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/valdivio-netto-cga-0229a61b2/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
@@ -498,14 +629,16 @@
                 <div class="alumni-name">Vinícius de Assis Campos</div>
                 <span class="alumni-company">Suno Asset</span>
                 <div class="alumni-role">Analista de Crédito Estruturado</div>
-                <a href="https://www.linkedin.com/in/vinícius-de-assis-campos-1b7a88263/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/vinícius-de-assis-campos-1b7a88263/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Gabriel Dantas, CNPI</div>
                 <span class="alumni-company">Brasil Horizonte</span>
                 <div class="alumni-role">Co-Fundador</div>
-                <a href="https://www.linkedin.com/in/gabriel-dantas-a-melo-cnpi-8796b4158/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gabriel-dantas-a-melo-cnpi-8796b4158/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
@@ -540,14 +673,16 @@
                 <div class="alumni-name">Miguel Soares</div>
                 <span class="alumni-company">BTG Pactual</span>
                 <div class="alumni-role">US Broker dealer - Institucional</div>
-                <a href="https://www.linkedin.com/in/miguel-teixeira-soares/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/miguel-teixeira-soares/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Gustavo Peixoto</div>
                 <span class="alumni-company">Inter</span>
                 <div class="alumni-role">Analista de Macro Research</div>
-                <a href="https://www.linkedin.com/in/gustavopeixotomenezes/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gustavopeixotomenezes/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
@@ -561,56 +696,64 @@
                 <div class="alumni-name">Gustavo Silveira</div>
                 <span class="alumni-company">Imeri Capital</span>
                 <div class="alumni-role">M&A Analyst</div>
-                <a href="https://www.linkedin.com/in/gustavo-silveira-66855a24a/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gustavo-silveira-66855a24a/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Lucas Greco</div>
                 <span class="alumni-company">Inter Asset</span>
                 <div class="alumni-role">Equity Research</div>
-                <a href="https://www.linkedin.com/in/lucas-greco-9b5958207/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lucas-greco-9b5958207/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Caio Garcia</div>
                 <span class="alumni-company">Imeri Capital</span>
                 <div class="alumni-role">M&A e Finanças Corporativas</div>
-                <a href="https://www.linkedin.com/in/caio-ardison-53b640267/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/caio-ardison-53b640267/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Vinicius Tanure</div>
                 <span class="alumni-company">UBS</span>
                 <div class="alumni-role">Trading Desk Internship</div>
-                <a href="https://www.linkedin.com/in/vinicius-tanure-090b19253/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/vinicius-tanure-090b19253/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Leon David, CEA</div>
                 <span class="alumni-company">Stokos Wealth Management</span>
                 <div class="alumni-role">Banker</div>
-                <a href="https://www.linkedin.com/in/leon-david-cruz-de-braga-b22210252/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/leon-david-cruz-de-braga-b22210252/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Lucas Procopio</div>
                 <span class="alumni-company">Bradesco Principal</span>
                 <div class="alumni-role">Gerente de negócios e operações</div>
-                <a href="https://www.linkedin.com/in/lucasprocopiomaia/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lucasprocopiomaia/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Eduardo Coelho</div>
                 <span class="alumni-company">IGC</span>
                 <div class="alumni-role">Capital Solutions</div>
-                <a href="https://www.linkedin.com/in/eduardo-coelho-07276b270/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/eduardo-coelho-07276b270/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">José Pedro Cruz</div>
                 <span class="alumni-company">Araújo Fontes</span>
                 <div class="alumni-role">Analista de M&A e DCM</div>
-                <a href="https://www.linkedin.com/in/josé-pedro-magalhães-prates-cruz-4697a7212/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/josé-pedro-magalhães-prates-cruz-4697a7212/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
@@ -638,7 +781,8 @@
                 <div class="alumni-name">Pedro Teixeira</div>
                 <span class="alumni-company">Araújo Fontes</span>
                 <div class="alumni-role">Analista de Crédito Privado</div>
-                <a href="https://www.linkedin.com/in/pedro-teixeira-br/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/pedro-teixeira-br/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
@@ -652,29 +796,33 @@
                 <div class="alumni-name">Lucas Lima</div>
                 <span class="alumni-company">Itaú Unibanco</span>
                 <div class="alumni-role">Corporate Credit Intern</div>
-                <a href="https://www.linkedin.com/in/lucas-lima-5383a5308/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lucas-lima-5383a5308/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Luis Flávio Barroso, CGA, CGE, CEA</div>
                 <span class="alumni-company">Navora Asset</span>
-                <a href="https://www.linkedin.com/in/luis-flavio-barroso-coelho-7085032b7/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/luis-flavio-barroso-coelho-7085032b7/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Lucas Torres</div>
                 <span class="alumni-company">Itaú BBA</span>
                 <div class="alumni-role">Corporate Banking Credit Intern</div>
-                <a href="https://www.linkedin.com/in/lucas-torres-de-freitas-541418242/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lucas-torres-de-freitas-541418242/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Theo Oliveira</div>
                 <span class="alumni-company">Bradesco</span>
                 <div class="alumni-role">Private Banking Intern</div>
-                <a href="https://www.linkedin.com/in/theo-oliveira-de-carvalho-365128300/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/theo-oliveira-de-carvalho-365128300/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
-      
+
             <div class="alumni-item">
                 <div class="alumni-name">Otávio David</div>
                 <span class="alumni-company">Araújo Fontes</span>
@@ -693,63 +841,72 @@
                 <div class="alumni-name">Marcos Peixoto</div>
                 <span class="alumni-company">Araújo Fontes</span>
                 <div class="alumni-role">Estágio em M&A e DCM</div>
-                <a href="https://www.linkedin.com/in/marcosbritopeixoto/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/marcosbritopeixoto/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Rafael Freire</div>
                 <span class="alumni-company">Tavros Capital</span>
                 <div class="alumni-role">Estagio em M&A</div>
-                <a href="https://www.linkedin.com/in/rafael-torres-freire-673545305/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/rafael-torres-freire-673545305/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Gabriel Fonseca</div>
                 <span class="alumni-company">Blackwall Partners</span>
                 <div class="alumni-role">Estagio em M&A</div>
-                <a href="https://www.linkedin.com/in/gabrielfranciscosoaresfonseca/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gabrielfranciscosoaresfonseca/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">João Pedro Gomes Amaral, CEA</div>
                 <span class="alumni-company">CF Investimentos</span>
                 <div class="alumni-role">Estagiário em Renda Variável</div>
-                <a href="https://www.linkedin.com/in/joão-pedro-gomes-amaral/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/joão-pedro-gomes-amaral/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Lucas Martins Nogueira</div>
                 <span class="alumni-company">Falconi</span>
                 <div class="alumni-role">Business Analyst Intern</div>
-                <a href="https://www.linkedin.com/in/lucasmartinsnogueira/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/lucasmartinsnogueira/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Alice Castro</div>
                 <span class="alumni-company">Impacto Hub</span>
                 <div class="alumni-role">Estágio de M&A</div>
-                <a href="https://www.linkedin.com/in/alice-areas-de-castro-848175279/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/alice-areas-de-castro-848175279/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Luiza Costa</div>
                 <span class="alumni-company">Impacto Hub</span>
                 <div class="alumni-role">Estágio em M&A</div>
-                <a href="https://www.linkedin.com/in/luiza-costa-cabral/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/luiza-costa-cabral/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Luis Gustavo</div>
                 <span class="alumni-company">Araújo Fontes</span>
                 <div class="alumni-role">Estágio em Venture Capital</div>
-                <a href="https://www.linkedin.com/in/luisgustavosantanavilela/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/luisgustavosantanavilela/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
                 <div class="alumni-name">Andre Laranjeira</div>
                 <span class="alumni-company">Tavros Capital</span>
                 <div class="alumni-role">Estagio em M&A</div>
-                <a href="https://www.linkedin.com/in/andre-laranjeira-763466310/" target="_blank" class="linkedin-btn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/andre-laranjeira-763466310/" target="_blank"
+                    class="linkedin-btn">LinkedIn</a>
             </div>
 
             <div class="alumni-item">
@@ -757,7 +914,7 @@
                 <span class="alumni-company">Araújo Fontes</span>
                 <div class="alumni-role">Estágio em M&A e DCM</div>
                 <a href="https://www.linkedin.com/in/felipeqmagalhães" target="_blank" class="linkedin-btn">LinkedIn</a>
-            </div>      
+            </div>
 
         </div>
     </section>
@@ -812,7 +969,8 @@
                 &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
             </div>
             <div class="developer">
-                Developed by <a href="#" class="dev-signature">Gustavo Henrique</a>
+                Developed by <a href="https://www.linkedin.com/in/gustavo-henrique-cefet/" target="_blank" class="dev-signature">Gustavo
+                    Henrique</a>
             </div>
         </div>
     </footer>
