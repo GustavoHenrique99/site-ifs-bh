@@ -474,14 +474,35 @@
         @media (max-width: 900px) {
             /* --- OTIMIZAÇÃO DE PERFORMANCE MOBILE --- */
             .hero-video {
-                display: none; /* Desliga o vídeo no celular para subir a nota do Google */
+                display: none;
             }
 
             .hero {
-                background-image: url('img/background-video.webp'); /* Usa a imagem leve */
-                background-attachment: scroll; /* Melhora a fluidez do toque */
+                background-image: url('img/background-video.webp');
+                background-attachment: scroll;
             }
-            /* ---------------------------------------- */
+
+            /* --- AJUSTES DE RESPONSIVIDADE PARA COMPETIÇÕES --- */
+            .intro-classic-section {
+                padding: 80px 5%;
+            }
+
+            .zigzag-section {
+                flex-direction: column !important;
+                padding: 80px 5%;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .zigzag-content {
+                max-width: 100%;
+            }
+
+            .zigzag-image {
+                width: 100%;
+                height: 300px;
+            }
+            /* -------------------------------------------------- */
 
             header {
                 background: #101622;
@@ -907,6 +928,7 @@
                     </svg>
                 </a>
             </div>
+        </div>
     </footer>
 
     <script>
