@@ -449,16 +449,23 @@
             color: #D4B45F;
         }
 
-        /* =========================================
-           AJUSTES GLOBAIS E MOBILE - INSERÇÃO CIRÚRGICA
-           ========================================= */
         @media (max-width: 900px) {
+            /* --- OTIMIZAÇÃO DE PERFORMANCE MOBILE --- */
+            .hero-video {
+                display: none; /* Desliga o vídeo no celular para subir a nota do Google */
+            }
+
+            .hero {
+                background-image: url('img/background-video.webp'); /* Usa a imagem leve */
+                background-attachment: scroll; /* Melhora a fluidez do toque */
+            }
+            /* ---------------------------------------- */
+
             header {
                 background: #101622;
                 padding: 15px 5%;
             }
 
-            /* Lógica do Menu Hambúrguer via Checkbox CSS-Only */
             .menu-icon {
                 display: block;
             }
@@ -491,38 +498,60 @@
                 border-bottom: none;
             }
 
-            .intro-classic-section {
+            .hero-center-logo {
+                height: 120px;
+            }
+
+            .section-light,
+            .section-dark,
+            .section-darker {
                 padding: 80px 5%;
             }
 
-            .alumni-list-section {
+            .cta-elite {
                 padding: 80px 5%;
             }
 
-            /* Ajuste da Grid de Alumni para Mobile */
-            .alumni-list-grid {
-                grid-template-columns: 1fr;
+            .cta-title {
+                font-size: 32px;
                 text-align: center;
             }
 
-            .section-title-gold {
+            .cta-text {
                 text-align: center;
             }
 
-            .section-title-gold::after {
-                left: 50%;
-                transform: translateX(-50%);
+            .btn-gold-cta {
+                width: 100%;
+                text-align: center;
             }
 
-            .alumni-item:hover {
-                transform: none;
+            .cta-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .cta-watermark {
+                font-size: 60vw;
+                top: 15%;
+                right: -20%;
+                opacity: 0.05;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .partner-box {
+                height: 60px;
             }
 
             /* Ajustes do Footer no Mobile */
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 50px;
+                gap: 40px;
             }
 
             .footer-brand {
@@ -530,13 +559,11 @@
                 width: 100%;
             }
 
-            /* Ajuste de centralização */
             .footer-socials {
                 justify-content: center;
                 width: 100%;
             }
 
-            /* Centraliza ícones */
             .footer-column h4::after {
                 left: 50%;
                 transform: translateX(-50%);

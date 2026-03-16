@@ -665,6 +665,17 @@
         }
 
         @media (max-width: 900px) {
+            /* --- OTIMIZAÇÃO DE PERFORMANCE MOBILE --- */
+            .hero-video {
+                display: none; /* Desliga o vídeo no celular para subir a nota do Google */
+            }
+
+            .hero {
+                background-image: url('img/background-video.webp'); /* Usa a imagem leve */
+                background-attachment: scroll; /* Melhora a fluidez do toque */
+            }
+            /* ---------------------------------------- */
+
             header {
                 background: #101622;
                 padding: 15px 5%;
@@ -677,13 +688,13 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 105px;
+                top: 100px;
                 left: 0;
                 width: 100%;
                 background-color: #101622;
                 flex-direction: column;
                 gap: 0;
-                padding: 0;
+                padding: 20px 0;
                 border-bottom: 2px solid #D4B45F;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             }
@@ -696,61 +707,62 @@
                 padding: 15px 5%;
                 width: 100%;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                margin: 0;
-                text-align: center;
             }
 
             nav a:last-child {
                 border-bottom: none;
             }
 
-            .history-section {
-                padding: 40px 5%;
+            .hero-center-logo {
+                height: 120px;
             }
 
-            .tabs-header {
-                gap: 8px;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                justify-content: flex-start;
-                padding-bottom: 15px;
-                -webkit-overflow-scrolling: touch;
+            .section-light,
+            .section-dark,
+            .section-darker {
+                padding: 80px 5%;
             }
 
-            .tab-btn {
-                flex: 0 0 auto;
-                font-size: 13px;
-                padding: 8px 12px;
+            .cta-elite {
+                padding: 80px 5%;
             }
 
-            .board-grid {
-                flex-direction: row;
-                flex-wrap: wrap;
-                align-items: stretch;
+            .cta-title {
+                font-size: 32px;
+                text-align: center;
             }
 
-            .member-card {
-                flex: 1 1 calc(50% - 12px);
-                max-width: 220px;
+            .cta-text {
+                text-align: center;
             }
 
-            .photo-placeholder {
-                width: 110px;
-                height: 110px;
+            .btn-gold-cta {
+                width: 100%;
+                text-align: center;
             }
 
-            .challenge-box {
-                padding: 20px;
+            .cta-container {
+                flex-direction: column;
+                gap: 30px;
             }
 
-            .challenge-box::before {
-                right: 20px;
+            .cta-watermark {
+                font-size: 60vw;
+                top: 15%;
+                right: -20%;
+                opacity: 0.05;
             }
 
-            .detail-item {
-                padding: 10px 12px;
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
 
+            .partner-box {
+                height: 60px;
+            }
+
+            /* Ajustes do Footer no Mobile */
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -776,12 +788,11 @@
             .footer-column p,
             .footer-column a.email-link {
                 text-align: center;
-                display: inline-block;
             }
 
             .footer-bottom {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
                 text-align: center;
             }
         }
