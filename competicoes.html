@@ -330,6 +330,13 @@
             transition: transform 0.5s ease;
         }
 
+        /* Ajuste cirúrgico para o banner do Itaú */
+        .zigzag-image img.img-contain {
+            object-fit: cover !important;
+            object-position: center 20%; /* Foca mais na parte de cima/centro onde está o texto */
+            padding: 0; /* Remove o respiro para preencher a caixa toda */
+        }
+
         .zigzag-image:hover img {
             transform: scale(1.05);
         }
@@ -813,7 +820,7 @@
             </div>
         </div>
         <div class="zigzag-image">
-            <img src="img/SUA_FOTO_AQUI.jpg" alt="Equipe Vice-Campeã Itaú Quantamental 2023">
+            <img src="img/itau2023.jpg" alt="Equipe Vice-Campeã Itaú Quantamental 2023" class="img-contain">
         </div>
     </section>
 
