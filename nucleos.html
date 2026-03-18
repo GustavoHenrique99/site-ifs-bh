@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Núcleos de Estudo | IFS-BH</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="img/background-video.webp">
     <link rel="icon" type="image/webp" href="img/logo-ifs.webp">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -358,46 +356,137 @@
             color: #D4B45F;
         }
 
-        /* =========================================
-           AJUSTES GLOBAIS E MOBILE - INSERÇÃO CIRÚRGICA
-           ========================================= */
-        @media (max-width: 900px) {
+       @media (max-width: 900px) {
             /* --- OTIMIZAÇÃO DE PERFORMANCE MOBILE --- */
             .hero-video {
-                display: none;
+                display: none; /* Desliga o vídeo no celular para subir a nota do Google */
             }
 
             .hero {
-                background-image: url('img/background-video.webp');
-                background-attachment: scroll;
+                background-image: url('img/background-video.webp'); /* Usa a imagem leve */
+                background-attachment: scroll; /* Melhora a fluidez do toque */
             }
             /* ---------------------------------------- */
 
-            header { background: #101622; padding: 15px 5%; }
-            
-            .menu-icon { display: block; }
-            nav {
-                display: none; position: absolute; top: 100px; left: 0; width: 100%;
-                background-color: #101622; flex-direction: column; gap: 0;
-                padding: 20px 0; border-bottom: 2px solid #D4B45F; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            header {
+                background: #101622;
+                padding: 15px 5%;
             }
-            .menu-toggle:checked ~ nav { display: flex; }
-            nav a { padding: 15px 5%; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            nav a:last-child { border-bottom: none; }
 
-            .nucleus-centered-section {
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background-color: #101622;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                border-bottom: 2px solid #D4B45F;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu-toggle:checked~nav {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 5%;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            .hero-center-logo {
+                height: 120px;
+            }
+
+            .section-light,
+            .section-dark,
+            .section-darker {
                 padding: 80px 5%;
             }
 
+            .cta-elite {
+                padding: 80px 5%;
+            }
+
+            .cta-title {
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .cta-text {
+                text-align: center;
+            }
+
+            .btn-gold-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .cta-watermark {
+                font-size: 60vw;
+                top: 15%;
+                right: -20%;
+                opacity: 0.05;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .partner-box {
+                height: 60px;
+            }
+
+            /* Ajustes do Footer no Mobile */
             .footer-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 50px;
+                gap: 40px;
             }
-            .footer-brand { align-items: center; }
-            .footer-column h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-column ul li a, .footer-column p, .footer-column a.email-link { text-align: center; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+
+            .footer-brand {
+                align-items: center;
+                width: 100%;
+            }
+
+            .footer-socials {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-column ul li a,
+            .footer-column p,
+            .footer-column a.email-link {
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -406,7 +495,7 @@
 
     <header>
         <a href="/" class="header-logo">
-            <img src="img/logo-ifs.webp" alt="IFS Logo" width="75" height="75" fetchpriority="high">
+            <img src="img/logo-ifs.webp" alt="IFS Logo">
         </a>
 
         <input type="checkbox" id="menu-check" class="menu-toggle">
@@ -424,7 +513,7 @@
     </header>
 
     <section class="hero">
-        <video class="hero-video" id="meuVideo" autoplay loop muted playsinline poster="img/background-video.webp">
+       <video class="hero-video" id="meuVideo" autoplay loop muted playsinline poster="img/background-video.webp">
             <source src="video/video-fundo.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
@@ -475,7 +564,7 @@
         <div class="footer-grid">
 
             <div class="footer-brand">
-                <img src="img/logo-ifs.webp" alt="IFS Logo" class="footer-logo-img" width="110" height="110" loading="lazy">
+                <img src="img/logo-ifs.webp" alt="IFS Logo" class="footer-logo-img">
                 <div class="footer-socials">
                     <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank"
                         aria-label="LinkedIn">
