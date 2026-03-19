@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni | IFS-BH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="img/background-video.webp">
     <link rel="icon" type="image/webp" href="img/logo-ifs.webp">
     <link
@@ -453,12 +455,12 @@
         @media (max-width: 900px) {
             /* --- OTIMIZAÇÃO DE PERFORMANCE MOBILE --- */
             .hero-video {
-                display: none; /* Desliga o vídeo no celular para subir a nota do Google */
+                display: none;
             }
 
             .hero {
-                background-image: url('img/background-video.webp'); /* Usa a imagem leve */
-                background-attachment: scroll; /* Melhora a fluidez do toque */
+                background-image: url('img/background-video.webp');
+                background-attachment: scroll;
             }
             /* ---------------------------------------- */
 
@@ -589,7 +591,7 @@
 
     <header>
         <a href="/" class="header-logo">
-            <img src="img/logo-ifs.webp" alt="IFS Logo">
+            <img src="img/logo-ifs.webp" alt="IFS Logo" width="75" height="75" fetchpriority="high">
         </a>
 
         <input type="checkbox" id="menu-check" class="menu-toggle">
@@ -950,7 +952,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
-                <img src="img/logo-ifs.webp" alt="IFS Logo" class="footer-logo-img">
+                <img src="img/logo-ifs.webp" alt="IFS Logo" class="footer-logo-img" width="110" height="110" loading="lazy">
                 <div class="footer-socials">
                     <a href="https://www.linkedin.com/company/ib-finance-bh/about/" target="_blank"
                         aria-label="LinkedIn">
@@ -993,9 +995,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="copyright">
-                &copy; 2026 Ibmec Finance Society. Todos os direitos reservados.
-            </div>
+            <div class="copyright">&copy; 2026 Ibmec Finance Society. Todos os direitos reservados.</div>
             <div class="developer">
                 Developed by
                 <a href="https://www.linkedin.com/in/gustavo-henrique-cefet/" target="_blank" class="dev-signature"
